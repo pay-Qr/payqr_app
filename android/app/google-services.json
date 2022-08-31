@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "469110089492",
+    "project_id": "patqr-57366",
+    "storage_bucket": "patqr-57366.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469110089492:android:0a414c2c4fa2cec35ac401",
+        "android_client_info": {
+          "package_name": "com.example.payqr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469110089492-fest92st741o1h2bg1f8ofd73cnen71m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQu1kagg0QOUALu0eE3fMvlf4sK7ELZBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "469110089492-fest92st741o1h2bg1f8ofd73cnen71m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
