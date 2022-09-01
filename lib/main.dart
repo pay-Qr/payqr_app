@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:payqr/test.dart';
-import 'package:payqr/views/screens/qrcodescanner.dart';
-
+import 'package:get/get.dart';
+import 'package:payqr/views/screens/local_auth.dart';
+ 
 void main() {
   runApp(const MyApp());
 }
@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:  const  QrCodeScanner()
+      home:  const  LocalAuthBio()
     );
   }
 } 

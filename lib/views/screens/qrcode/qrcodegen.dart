@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:payqr/controller/qrcodegenrateur.dart';
+import 'package:payqr/controller/qrcode/qrcodegenrateur.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
 
 class QrcodeGen extends StatelessWidget {

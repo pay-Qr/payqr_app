@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:payqr/controller/qrcodescanner_controller.dart';
+import 'package:payqr/controller/qrcode/qrcodescanner_controller.dart';
 
 abstract class ConfirmPaymentController
     extends GetxController {

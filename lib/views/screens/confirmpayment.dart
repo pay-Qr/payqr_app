@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:payqr/controller/qrcodescanner_controller.dart';
+import 'package:payqr/controller/qrcode/qrcodescanner_controller.dart';
 
 class ConfirmPayment extends StatelessWidget {
   const ConfirmPayment({Key? key})
