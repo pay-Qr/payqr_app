@@ -1,9 +1,8 @@
 import 'package:get/get.dart';
  import 'package:local_auth/local_auth.dart';
-import 'package:payqr/views/screens/home.dart';
+ import '../views/screens/onbording.dart';
  
-import '../views/screens/confirmpayment.dart';
-
+ 
 abstract class LocaleAuthController
     extends GetxController {
   LocalAuthentication auth =
@@ -25,7 +24,7 @@ class LocaleAuthControllerImp
              biometricOnly: true, stickyAuth: true, sensitiveTransaction: true)
         );
         if (authenticated) {
-         Get.off(const  Home());
+         Get.off(const  OnBording());
         }  
      
       }
