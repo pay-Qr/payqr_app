@@ -90,5 +90,14 @@ flutter:
         - asset: assets/fonts/Poppins/Poppins-Regular.ttf
         - asset: assets/fonts/Poppins/Poppins-Bold.ttf
           weight: 700
+    - family: Amaranth
+      fonts:
+        - asset: assets/fonts/Amaranth/Amaranth-Bold.ttf
+        - asset: assets/fonts/Amaranth/Amaranth-BoldItalic.ttf
+        - asset: assets/fonts/Amaranth/Amaranth-Italic.ttf
+        - asset: assets/fonts/Amaranth/Amaranth-Regular.ttf
+    - family: TitanOne
+      fonts:
+        - asset: assets/fonts/TitanOne/TitanOne-Regular.ttf
 
   
