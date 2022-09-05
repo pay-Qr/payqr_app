@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/views/screens/account_details.dart';
 import 'package:payqr/views/screens/confirmation_code.dart';
+import 'package:payqr/views/screens/identity_verification.dart';
 import 'package:payqr/views/screens/login.dart';
 import 'package:payqr/views/screens/onbording.dart';
 import 'package:payqr/views/screens/personal_details.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       
-      home: const OnBording(),
+      home: const IdentityVerification(),
     );
   }
 } 
