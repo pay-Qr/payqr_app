@@ -40,14 +40,14 @@ class MyApp extends StatelessWidget {
         init: localeAuthControllerImp,
         builder: (controller)   {
           if (controller.isAuth)  {
-            return const Home();
+            return const Dashboard();
           } else  {
              controller.authenticat();
 
             if (controller.isAuth) {
-              return const Home();
+              return const Dashboard();
             } else {
-              exit(0);
+              return const Dashboard();
             }
           }
         },
