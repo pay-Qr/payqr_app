@@ -1,17 +1,12 @@
+ 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:payqr/views/screens/account_details.dart';
-import 'package:payqr/views/screens/confirmation_code.dart';
-import 'package:payqr/views/screens/identity_verification.dart';
-import 'package:payqr/views/screens/login.dart';
+import 'package:payqr/controller/localauth_controller.dart';
+import 'package:payqr/views/screens/dashboard.dart';
+ import 'package:payqr/views/screens/dashboard/home.dart';
 import 'package:payqr/views/screens/onbording.dart';
-import 'package:payqr/views/screens/personal_details.dart';
- 
-  
+
 import 'core/constants/style.dart';
-import 'views/screens/dashboard.dart';
-import 'views/screens/upload_id.dart';
-import 'views/screens/verify_user.dart';
  
 void main() {
   runApp(const MyApp());
@@ -20,22 +15,44 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-   @override
+  @override
   Widget build(BuildContext context) {
+    LocaleAuthControllerImp
+        localeAuthControllerImp =
+        LocaleAuthControllerImp();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'PayQR App',
-       theme: ThemeData(
+      title: 'Flutter Demo',
+      theme: ThemeData(
         fontFamily: AppFont.primary,
         textTheme: const TextTheme(
-          bodyText1: TextStyle(height: 2.3 , fontFamily: AppFont.primary),
+          bodyText1: TextStyle(
+              height: 2.3,
+              fontFamily: AppFont.primary),
           headline1: TextStyle(
               color: Colors.black, fontSize: 24),
         ),
         primarySwatch: Colors.blue,
       ),
-      
-      home: const IdentityVerification(),
+      home: GetBuilder<LocaleAuthControllerImp>(
+        init: localeAuthControllerImp,
+        builder: (controller)   {
+          if (controller.isAuth)  {
+            return const Dashboard();
+          } else  {
+             controller.authenticat();
+
+            if (controller.isAuth) {
+              return const Dashboard();
+            } else {
+ 
+              
+ 
+              return const OnBording();
+             }
+          }
+        },
+      ),
     );
   }
-} 
+}
