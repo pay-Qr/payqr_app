@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants/style.dart';
+import '../../../core/constants/style.dart';
 
 class AppHomeBar extends StatelessWidget {
   const AppHomeBar({Key? key}) : super(key: key);

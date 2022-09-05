@@ -1,11 +1,15 @@
+import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
+ 
 class AppIcon {
-static const String path = "assets/images/icon";
-static   String book = '$path/book.jpeg';
-static   String food = '$path/food.jpeg';
-static   String game = '$path/game.jpeg';
-static   String health = '$path/health.jpeg';
-static   String electr = '$path/electr.jpeg';
-static   String  traveling = '$path/traveling.jpg';
-static   String supermaket = '$path/spermarket.jpeg';
-static   String  beauti = '$path/beauti.jpeg';
+ 
+static   IconData food = LineIcons.utensils;
+static   IconData book = LineIcons.book;
+static   IconData electr = LineIcons.plug;
+static   IconData health = LineIcons.heartbeat;
+static   IconData game = LineIcons.gamepad;
+static   IconData home = LineIcons.home;
+static  IconData shoping = LineIcons.shoppingBasket;
+static  IconData gaz = LineIcons.gasPump;
+static  IconData cloths = LineIcons.tShirt;
 }

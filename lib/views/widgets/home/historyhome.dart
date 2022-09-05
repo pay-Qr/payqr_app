@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
- 
-import '../../data/datasource/data.dart';
+
+import '../../../data/datasource/data.dart';
 
 class AppHistoryHome extends StatelessWidget {
   const AppHistoryHome({Key? key})
@@ -28,7 +28,7 @@ class AppHistoryHome extends StatelessWidget {
                 style: TextStyle(fontSize: 22),
               ),
               Text(
-                '-2500DA',
+                '2500DA',
                 style: TextStyle(fontSize: 22),
               )
             ],
@@ -44,10 +44,14 @@ class AppHistoryHome extends StatelessWidget {
                     subtitle: Text(
                         '${data[index].time.hour}:${data[index].time.minute}'),
                     trailing: Text(
-                        '${data[index].price}'),
+                        '${data[index].price} DA'),
                     leading: CircleAvatar(
-                      backgroundImage: AssetImage(
-                          data[index].image),
+                      backgroundColor:
+                          data[index].color,
+                      child: Icon(
+                        data[index].icon,
+                        color: Colors.white,
+                      ),
                     ),
                   );
                 })))
