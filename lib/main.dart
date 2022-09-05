@@ -1,10 +1,15 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
- 
-  
+import 'package:payqr/controller/localauth_controller.dart';
+import 'package:payqr/views/screens/auth/local_auth.dart';
+import 'package:payqr/views/screens/dashboard/home.dart';
+import 'package:payqr/views/screens/onbording.dart';
+
 import 'core/constants/style.dart';
 import 'views/screens/dashboard.dart';
- 
+
 void main() {
   runApp(const MyApp());
 }
@@ -12,22 +17,41 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-   @override
+  @override
   Widget build(BuildContext context) {
+    LocaleAuthControllerImp
+        localeAuthControllerImp =
+        LocaleAuthControllerImp();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-       theme: ThemeData(
+      theme: ThemeData(
         fontFamily: AppFont.primary,
         textTheme: const TextTheme(
-          bodyText1: TextStyle(height: 2.3 , fontFamily: AppFont.primary),
+          bodyText1: TextStyle(
+              height: 2.3,
+              fontFamily: AppFont.primary),
           headline1: TextStyle(
               color: Colors.black, fontSize: 24),
         ),
         primarySwatch: Colors.blue,
       ),
-      
-      home:  const  Dashboard()
+      home: GetBuilder<LocaleAuthControllerImp>(
+        init: localeAuthControllerImp,
+        builder: (controller)   {
+          if (controller.isAuth)  {
+            return const Home();
+          } else  {
+             controller.authenticat();
+
+            if (controller.isAuth) {
+              return const Home();
+            } else {
+              exit(0);
+            }
+          }
+        },
+      ),
     );
   }
-} 
+}

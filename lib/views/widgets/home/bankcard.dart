@@ -2,7 +2,7 @@ import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controller/home_controllre.dart';
+import '../../../controller/home_controllre.dart';
 
 class AppBankCard extends StatelessWidget {
   const AppBankCard({Key? key}) : super(key: key);

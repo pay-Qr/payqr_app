@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
-import '../../views/screens/confirmpayment.dart';
+import '../../views/screens/transaction/confirmpayment.dart';
 
 abstract class QrCodeScannerController
     extends GetxController {

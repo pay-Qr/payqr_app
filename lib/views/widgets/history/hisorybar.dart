@@ -33,7 +33,7 @@ class AppHistoryBar extends StatelessWidget {
                   MainAxisAlignment.center,
               children: [
                 Text(
-                  '${amount} Da',
+                  '$amount Da',
                   maxLines: 2,
                   overflow: TextOverflow.fade,
                   style: const TextStyle(
@@ -49,7 +49,7 @@ class AppHistoryBar extends StatelessWidget {
           margin: const EdgeInsets.only(
               left: 15, right: 15),
           width: 55,
-          height: (amount! * 100) / 1500,
+          height: (amount! * 100) / 1400,
           decoration: BoxDecoration(
             color: color!.withOpacity(0.7),
             borderRadius:
@@ -63,7 +63,7 @@ class AppHistoryBar extends StatelessWidget {
               children: [
                 Text(
                   month!,
-                  style: TextStyle(
+                  style: const  TextStyle(
                       color: Colors.white),
                 ),
               ],

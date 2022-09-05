@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:payqr/controller/amount_controller.dart';
-import 'package:payqr/core/constants/style.dart';
- import 'package:payqr/views/widgets/recieve/amountcircule.dart';
-import 'package:payqr/views/widgets/recieve/formfieldrecive.dart';
 
-class Test extends StatelessWidget {
-  const Test({Key? key}) : super(key: key);
+import '../../../core/constants/style.dart';
+import '../../widgets/recieve/amountcircule.dart';
+import '../../widgets/recieve/formfieldrecive.dart';
+
+class Recieve extends StatelessWidget {
+  const Recieve({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-  
-AmountControllerImp amountControllerImp = Get.put(AmountControllerImp()); 
-    
+
+  AmountControllerImp amountControllerImp = Get.put(AmountControllerImp());
     return Scaffold(
       backgroundColor: AppColor.background,
       appBar: AppBar(
@@ -92,6 +92,6 @@ AmountControllerImp amountControllerImp = Get.put(AmountControllerImp());
           ],
         ),
       ),
-    );
+    ) ;
   }
 }

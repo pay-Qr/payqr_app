@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
  import 'package:ionicons/ionicons.dart';
+import 'package:payqr/controller/home_controllre.dart';
  
-import '../../core/constants/style.dart';
-import '../widgets/bankcard.dart';
-import '../widgets/historyhome.dart';
-import '../widgets/homeappbar.dart';
-import '../widgets/homebtn.dart';
+import '../../../core/constants/style.dart';
+import '../../widgets/home/bankcard.dart';
+import '../../widgets/home/historyhome.dart';
+import '../../widgets/home/homeappbar.dart';
+import '../../widgets/home/homebtn.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    HomeControllerIpm homeControllerIpm = HomeControllerIpm();
     return Scaffold(
         backgroundColor: AppColor.background,
         body: Column(
@@ -26,7 +28,9 @@ class Home extends StatelessWidget {
                     label: 'Recieve',
                     icon: Ionicons
                         .arrow_down_circle_outline,
-                    ontap: () {}),
+                    ontap: () {
+                      homeControllerIpm.goToRecieve();
+                    }),
                 AppHomeBtn(
                     label: 'Sent',
                     icon: Ionicons

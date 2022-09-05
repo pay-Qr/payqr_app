@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../core/constants/style.dart';
-import '../../data/datasource/data.dart';
-import '../widgets/hisorybar.dart';
+import 'package:payqr/views/widgets/history/historywidget.dart';
+ 
+import '../../../core/constants/style.dart';
+import '../../../data/datasource/data.dart';
+import '../../widgets/history/hisorybar.dart';
 
 class History extends StatelessWidget {
   const History({Key? key}) : super(key: key);
@@ -13,10 +14,12 @@ class History extends StatelessWidget {
     return Scaffold(
         backgroundColor: AppColor.background,
         body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.only(top: 10),
           child: Column(
            
             children: [
+             const  Text('History', style: TextStyle(fontSize: 28)),
+           const  SizedBox(height: 5),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:  [
@@ -43,8 +46,8 @@ class History extends StatelessWidget {
                   ),
                 ],
               ),
-              Container(
-                height: Get.height * 0.3,
+              SizedBox(
+                height: Get.height * 0.32,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 12,
@@ -55,18 +58,22 @@ class History extends StatelessWidget {
                       children: [
                         AppHistoryBar(
                           month:
-                              BarData[index].month,
+                            barData[index].month,
                           amount:
-                              BarData[index].amount,
+                              barData[index].amount,
                           color:
-                              BarData[index].color,
+                              barData[index].color,
                         ),
                       ],
                     );
                   },
                 ),
               ),
-              Expanded(flex: 2, child: Container()),
+             const SizedBox(
+                height: 30,
+              ),
+             
+            const AppHistoryPage()
             ],
           ),
         ));

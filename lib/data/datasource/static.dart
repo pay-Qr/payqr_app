@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:payqr/views/screens/history.dart';
-import 'package:payqr/views/screens/home.dart';
+import 'package:payqr/views/screens/dashboard/history.dart';
+import 'package:payqr/views/screens/dashboard/home.dart';
 
 List<IconData> bottomBarItems = const [
   Ionicons.home,
