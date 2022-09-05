@@ -10,6 +10,8 @@ import 'package:payqr/views/screens/personal_details.dart';
   
 import 'core/constants/style.dart';
 import 'views/screens/dashboard.dart';
+import 'views/screens/upload_id.dart';
+import 'views/screens/verify_user.dart';
  
 void main() {
   runApp(const MyApp());
