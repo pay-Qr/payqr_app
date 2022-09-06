@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payqr/core/constants/style.dart';
-import 'package:payqr/views/screens/upload_id.dart';
+import 'package:payqr/views/screens/auth/upload_id.dart';
 
 class VerifyUser extends StatefulWidget {
   const VerifyUser({super.key});

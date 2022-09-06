@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
- import 'package:ionicons/ionicons.dart';
+  import 'package:ionicons/ionicons.dart';
 import 'package:payqr/controller/home_controllre.dart';
 import 'package:payqr/views/screens/qrcode/qrcodescanner.dart';
  

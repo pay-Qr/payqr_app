@@ -29,7 +29,7 @@ class History extends StatelessWidget {
                 children: [
                   TextButton(
                     onPressed: () {
-                      pageViewControllerImp.Next(
+                      pageViewControllerImp.next(
                           0);
                     },
                     child: const Text(
@@ -42,7 +42,7 @@ class History extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      pageViewControllerImp.Next(
+                      pageViewControllerImp.next(
                           1);
                     },
                     child: Text(
@@ -56,7 +56,7 @@ class History extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      pageViewControllerImp.Next(
+                      pageViewControllerImp.next(
                           2);
                     },
                     child: Text(

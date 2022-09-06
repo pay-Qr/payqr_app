@@ -7,7 +7,7 @@ abstract class PageViewController
   late PageController controller =
       PageController();
   late Color color = AppColor.text;
-  Next(page);
+  next(page);
 }
 
 class PageViewControllerImp
@@ -22,7 +22,7 @@ class PageViewControllerImp
   }
   
   @override
-  Next(page) {
+ next(page) {
   
     controller.animateToPage(page,
         duration: const Duration(milliseconds: 300),

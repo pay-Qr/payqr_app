@@ -34,7 +34,7 @@ class LocaleAuthControllerImp
   chekbio() async {
     canscan = await auth.canCheckBiometrics;
     if (!canscan!) {
-      Get.to(Dashboard());
+      Get.to(const Dashboard());
     }
     authenticat();
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/core/constants/style.dart';
 import 'package:payqr/views/screens/dashboard.dart';
-import 'package:payqr/views/screens/personal_details.dart';
+import 'package:payqr/views/screens/auth/personal_details.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
 import 'package:payqr/views/widgets/reusable_textfield.dart';
 
@@ -14,7 +14,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final TextEditingController _phoneController =
+  final TextEditingController phoneController =
       TextEditingController();
 
   @override

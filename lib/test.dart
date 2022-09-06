@@ -16,9 +16,7 @@ class Test extends StatelessWidget {
           children: [
             Expanded(
               child: PageView(
-                onPageChanged: (value) {
-                  print(value);
-                },
+               
                 controller: pageViewControllerImp
                     .controller,
                 children: [
