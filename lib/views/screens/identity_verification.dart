@@ -83,13 +83,13 @@ class IdentityVerification
               child: Column(
                 mainAxisAlignment:
                     MainAxisAlignment.end,
-                children: const [
+                children:   [
                   Flexible(
                     child: Text(
                       "We guarantee your information security, Your information is only used for identity verification!",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: AppColor.secondary,
+                        color: AppColor.text.withOpacity(.7),
                         fontSize: 12,
                       ),
                     ),

@@ -37,7 +37,20 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const Dashboard(),
+      home:GetBuilder<LocaleAuthControllerImp>(
+        init: localeAuthControllerImp,
+        builder: (controller)   {
+          if (controller.isAuth)  {
+            return const Dashboard();
+          } else  {
+              return  const Scaffold(
+                body: Center(child: CircularProgressIndicator()),
+              );
+
+          
+          }
+        },
+      ),
     );
   }
 }
