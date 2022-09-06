@@ -8,6 +8,7 @@ import 'package:payqr/views/screens/dashboard.dart';
 import 'package:payqr/views/screens/identity_verification.dart';
 import 'package:payqr/views/screens/login.dart';
 import 'package:payqr/views/screens/personal_details.dart';
+import 'package:payqr/views/screens/qrcode/qrcodescanner.dart';
  
 import 'core/constants/style.dart';
  
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         init: localeAuthControllerImp,
         builder: (controller)   {
           if (controller.isAuth)  {
-            return const Dashboard();
+            return const QrCodeScanner();
           } else  {
               return  const Scaffold(
                 body: Center(child: CircularProgressIndicator()),
