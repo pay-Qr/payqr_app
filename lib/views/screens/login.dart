@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:payqr/core/constants/style.dart';
-import 'package:payqr/views/screens/confirmation_code.dart';
+import 'package:get/get.dart';
+ import 'package:payqr/core/constants/style.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
+import 'package:payqr/views/widgets/reusable_textfield.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -11,131 +12,120 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _phoneController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.background,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: const Text(
+          "Login",
+          style: TextStyle(
+            color: Color(0xFF12182D),
+            fontSize: 30,
+          ),
+        ),
+        centerTitle: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const SizedBox(height: 40),
-
-            // LOGIN TEXT
-            const Text(
-              "LOGIN",
-              style: TextStyle(
-                color: Color(0xFF12182D),
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Amaranth",
-              ),
-            ),
-            const SizedBox(height: 25),
-
-            // QR HAND-PHONE IMAGE
-            Container(
-              decoration: const BoxDecoration(
-                color: AppColor.background,
-              ),
-              child: Image.asset(
-                "assets/images/login.jpeg",
-              ),
-            ),
-            const SizedBox(height: 40),
-
-            // PHONE NUMBER TEXT FIELD
-            Container(
-              decoration: const BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColor.background,
-                    offset: Offset(4.0, 4.0),
-                    blurRadius: 15.0,
-                    spreadRadius: 1.0,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment:
+                MainAxisAlignment.start,
+            children: [
+              // QR HAND-PHONE IMAGE
+              Container(
+                height: Get.height * 0.35,
+                width: Get.width * 0.8,
+                decoration: const BoxDecoration(
+                  color: AppColor.background,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
                   ),
-                  BoxShadow(
-                    color: AppColor.background,
-                    offset: Offset(-4.0, -4.0),
-                    blurRadius: 15.0,
-                    spreadRadius: 1.0,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 10,
+                      spreadRadius: 5,
+                    ),
+                  ],
+                  image: DecorationImage(
+                    image: AssetImage(
+                        "assets/images/login.jpg"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+        
+              SizedBox(height: Get.height * 0.07),
+              // PHONE NUMBER TEXT FIELD
+              Container(
+                  decoration: const BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColor.background,
+                        offset: Offset(4.0, 4.0),
+                        blurRadius: 15.0,
+                        spreadRadius: 1.0,
+                      ),
+                      BoxShadow(
+                        color: AppColor.background,
+                        offset: Offset(-4.0, -4.0),
+                        blurRadius: 15.0,
+                        spreadRadius: 1.0,
+                      ),
+                    ],
+                  ),
+                  child: const ReusableTextField(
+                    titleText: "Phone Number",
+                    hintText:
+                        "Enter your Phone Number",
+                    icon: Icons.phone,
+                    keyboardType: TextInputType.phone,
+                  )),
+        
+              SizedBox(height: Get.height * 0.03),
+              ReusableButton(
+                label: "Next",
+                onTap: () {},
+              ),
+              const SizedBox(height: 40),
+        
+              // DON'T HAVE AN ACCOUNT? AND SIGN UP PROMPT BUTTON TEXT
+              Row(
+                mainAxisAlignment:
+                    MainAxisAlignment.center,
+                children: [
+                    Text(
+                    "Don't have an account?",
+                    style: TextStyle(
+                      color: AppColor.text.withOpacity(.6),
+                    
+                       
+                    ),
+                  ),
+                   
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        color: AppColor.blue,
+                      
+                        fontWeight: FontWeight.bold,
+                        
+                      ),
+                    ),
                   ),
                 ],
               ),
-              child: TextField(
-                controller: _phoneController,
-                textAlign: TextAlign.center,
-                decoration: const InputDecoration(
-                  // Todo: Make the prefixText Transparent
-                  prefixText: '+213',
-                  prefixStyle: TextStyle(
-                    color: Colors.transparent,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: "Enter your phone number",
-                  hintStyle: TextStyle(
-                    color: Colors.grey,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(50.0),
-                    ),
-                    borderSide: BorderSide.none,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 40),
-
-            // NEXT BUTTON
-            ReusableButton(
-              label: "Next",
-              onTap: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => const ConfirmationCode(),
-                //   ),
-                // );
-              },
-            ),
-            const SizedBox(height: 40),
-
-            // DON'T HAVE AN ACCOUNT? AND SIGN UP PROMPT BUTTON TEXT
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  "Don't have an account?",
-                  style: TextStyle(
-                    color: AppColor.blueText,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Amaranth",
-                  ),
-                ),
-                const SizedBox(width: 10),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Sign Up",
-                    style: TextStyle(
-                      color: AppColor.blue,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Amaranth",
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -19,19 +19,18 @@ class ReusableButton extends StatelessWidget {
           child: GestureDetector(
             onTap: onTap,
             child: Container(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
-                color: AppColor.blue,
-                borderRadius: BorderRadius.circular(50),
+                color: AppColor.primary,
+                borderRadius:
+                    BorderRadius.circular(20),
               ),
               child: Center(
                 child: Text(
                   label,
                   style: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Amaranth",
                   ),
                 ),
               ),

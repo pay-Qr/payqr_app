@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:payqr/core/constants/style.dart';
 
 class ReusableTextField extends StatelessWidget {
   final String hintText;
   final String titleText;
+  final IconData? icon;
+  final TextEditingController? controller;
+  final TextInputType? keyboardType;
 
   const ReusableTextField({
     Key? key,
     required this.hintText,
     required this.titleText,
+    this.icon,
+    this.controller,
+    this.keyboardType,
   }) : super(key: key);
 
   @override
@@ -15,29 +22,31 @@ class ReusableTextField extends StatelessWidget {
     return Column(
       children: [
         // FIRST NAME TEXT
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              titleText,
-              style: const TextStyle(
-                color: Color(0xFF12182D),
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Amaranth",
+        Padding(
+          padding: const EdgeInsets.symmetric(
+              horizontal: 10, vertical: 5),
+          child: Row(
+            mainAxisAlignment:
+                MainAxisAlignment.start,
+            children: [
+              Text(
+                titleText,
+                style: const TextStyle(
+                    color: AppColor.text,
+                    fontSize: 13,
+                    height: 1.5),
               ),
-            ),
-          ],
-        ),
-
-        const SizedBox(
-          height: 10.0,
+            ],
+          ),
         ),
 
         // FIRST NAME TEXT FIELD
-        Container(
-          decoration: const BoxDecoration(),
+        Material(
+          elevation: 1,
+          borderRadius: BorderRadius.circular(20),
           child: TextField(
+            controller: controller,
+            keyboardType: keyboardType,
             decoration: InputDecoration(
               filled: true,
               fillColor: const Color(0xFFF7FBFF),
@@ -45,10 +54,21 @@ class ReusableTextField extends StatelessWidget {
               hintStyle: const TextStyle(
                 color: Colors.blueGrey,
                 fontSize: 15,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Amaranth",
               ),
-              border: const OutlineInputBorder(),
+              suffixIcon: Icon(icon),
+              enabledBorder:
+                  const OutlineInputBorder(
+                borderSide: BorderSide(
+                    width: .25,
+                    color: AppColor.primary),
+                borderRadius: BorderRadius.all(
+                    Radius.circular(20)),
+              ),
+              border: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
+              ),
             ),
           ),
         ),

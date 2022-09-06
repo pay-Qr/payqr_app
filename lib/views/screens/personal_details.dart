@@ -1,99 +1,100 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:payqr/core/constants/style.dart';
 import 'package:payqr/views/screens/account_details.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
 import 'package:payqr/views/widgets/reusable_textfield.dart';
 
-class PersonalDetails extends StatefulWidget {
-  const PersonalDetails({super.key});
+import '../../controller/acountdetails_controller.dart';
 
-  @override
-  State<PersonalDetails> createState() => _PersonalDetailsState();
-}
+ 
+class PersonalDetails extends StatelessWidget {
+  const PersonalDetails({Key? key}) : super(key: key);
 
-class _PersonalDetailsState extends State<PersonalDetails> {
   @override
   Widget build(BuildContext context) {
+     AccountDetailsControllerImp accountDetailsControllerImp =
+        Get.put(AccountDetailsControllerImp());
     return Scaffold(
       backgroundColor: AppColor.background,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: const Text(
+          "Personal Details",
+          style: TextStyle(
+            color: Color(0xFF12182D),
+            fontSize: 23,
+          ),
+        ),
+        centerTitle: true,
+      ),
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const SizedBox(height: 40),
+        padding: const EdgeInsets.symmetric(
+            horizontal: 30, vertical: 60),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              FormField(builder: ((field) {
+                return Column(children:   [
+                   ReusableTextField(
+                    titleText: "Full Name",
+                    hintText:
+                        "Enter your Full name",
+                    icon: Ionicons.person_outline,
+                    keyboardType: TextInputType.name,
 
-            // ICON IMAGE AND TEXT
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                IconButton(
-                  icon: const Icon(
-                    Icons.person,
-                    size: 40,
+                    controller: accountDetailsControllerImp.cardholderNameController,
                   ),
-                  onPressed: () {},
-                ),
-                const SizedBox(width: 20),
-                const Text(
-                  "Personal Details",
-                  style: TextStyle(
-                    color: Color(0xFF12182D),
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Amaranth",
+
+                  const SizedBox(height: 5),
+
+                  ReusableTextField(
+                    titleText: "Email",
+                    hintText: "Enter your Email",
+                    keyboardType: TextInputType.emailAddress,
+                    icon: Ionicons.mail_outline,
+                    controller: accountDetailsControllerImp.emailController,
                   ),
-                ),
-              ],
-            ),
 
-            const SizedBox(height: 40),
+                  const SizedBox(height: 5),
+                  ReusableTextField(
+                    titleText: "Phone Number",
+                    hintText:
+                        "Enter your Phone Number",
+                        keyboardType: TextInputType.phone,
+                    icon: Ionicons.call_outline,
+                    controller: accountDetailsControllerImp.phoneNumberController,
+                  ),
+                  const SizedBox(height: 5),
 
-            // FIRST NAME TEXT FIELD
-            const ReusableTextField(
-              titleText: "First Name",
-              hintText: "Enter your first name",
-            ),
+                 
 
-            const SizedBox(height: 20),
+                  ReusableTextField(
+                    titleText: "City",
+                    hintText: "Enter your City",
 
-            // LAST NAME TEXT FIELD
-            const ReusableTextField(
-              titleText: "Last Name",
-              hintText: "Enter your last name",
-            ),
+                    icon:
+                        Ionicons.location_outline,
+                    controller: accountDetailsControllerImp.cityController,
+                    keyboardType: TextInputType.streetAddress,
+                  ),
+                ]);
+              })),
 
-            const SizedBox(height: 20),
+              const SizedBox(height: 20),
 
-            // EMAIL TEXT FIELD
-            const ReusableTextField(
-              titleText: "Email",
-              hintText: "Enter your email",
-            ),
+              // NEXT BUTTON
+              ReusableButton(
+                label: "Next",
+                onTap: () {
 
-            const SizedBox(height: 20),
-
-            // CITY TEXT FIELD
-            const ReusableTextField(
-              titleText: "City",
-              hintText: "Enter your city",
-            ),
-
-            const SizedBox(height: 80),
-
-            // NEXT BUTTON
-            ReusableButton(
-              label: "Next",
-              onTap: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => const AccountDetails(),
-                //   ),
-                // );
-              },
-            ),
-          ],
+                  Get.to(() => const AccountDetails());
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
