@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:payqr/core/constants/style.dart';
 
-class ReusableIdentitiyVerificationButton extends StatelessWidget {
+class ReusableIdentitiyVerificationButton
+    extends StatelessWidget {
   final String iconImagePath;
   final String titleText;
   final String subtitleText;
@@ -24,8 +26,8 @@ class ReusableIdentitiyVerificationButton extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(50),
           border: Border.all(
-            color: Colors.grey.shade50,
-            width: 2,
+            color: AppColor.primary,
+            width: .2,
           ),
           boxShadow: [
             BoxShadow(
@@ -34,36 +36,40 @@ class ReusableIdentitiyVerificationButton extends StatelessWidget {
               offset: const Offset(0, 5),
             ),
             BoxShadow(
-              color: Colors.grey.shade300,
-              blurRadius: 10,
+              color:
+                  AppColor.blue.withOpacity(.3),
+              blurRadius: 3,
               offset: const Offset(0, 5),
             ),
           ],
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment:
+              MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
                 // ICON
                 SizedBox(
-                  height: 50,
-                  child: Image.asset(iconImagePath),
+                  height:50,
+                  child:
+                      Image.asset(iconImagePath),
                 ),
 
                 const SizedBox(width: 20),
 
                 // TITLE AND SUBTITLE
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment:
+                      CrossAxisAlignment.start,
                   children: [
                     Text(
                       titleText,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color(0xFF12182D),
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Amaranth",
+                       
+                        fontWeight:
+                            FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 5),
@@ -71,8 +77,7 @@ class ReusableIdentitiyVerificationButton extends StatelessWidget {
                       subtitleText,
                       style: TextStyle(
                         color: Colors.grey[600],
-                        fontSize: 15,
-                        fontFamily: "Amaranth",
+                        
                       ),
                     ),
                   ],
@@ -80,9 +85,12 @@ class ReusableIdentitiyVerificationButton extends StatelessWidget {
               ],
             ),
 
-            // ARROW ICON
-            const Icon(
-              Icons.arrow_forward_ios,
+             
+          const  Padding(
+              padding:  EdgeInsets.all(8.0),
+              child:   Icon(
+                Icons.arrow_forward_ios,
+              ),
             ),
           ],
         ),

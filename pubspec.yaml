@@ -49,6 +49,7 @@ dependencies:
   stacked_bar_chart: ^1.1.0+2
   sleek_circular_slider: ^2.0.1
   circular: ^0.0.5
+  pinput: ^2.2.12
 
 dev_dependencies:
   flutter_test:

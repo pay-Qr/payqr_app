@@ -1,15 +1,16 @@
-import 'dart:io';
-
+ 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/controller/localauth_controller.dart';
-import 'package:payqr/views/screens/auth/local_auth.dart';
-import 'package:payqr/views/screens/dashboard/home.dart';
-import 'package:payqr/views/screens/onbording.dart';
-
+import 'package:payqr/views/screens/account_details.dart';
+import 'package:payqr/views/screens/confirmation_code.dart';
+import 'package:payqr/views/screens/dashboard.dart';
+import 'package:payqr/views/screens/identity_verification.dart';
+import 'package:payqr/views/screens/login.dart';
+import 'package:payqr/views/screens/personal_details.dart';
+ 
 import 'core/constants/style.dart';
-import 'views/screens/dashboard.dart';
-
+ 
 void main() {
   runApp(const MyApp());
 }
@@ -36,22 +37,21 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: GetBuilder<LocaleAuthControllerImp>(
+      home: const Dashboard(),
+    );
+  }
+}
+
+/*
+ GetBuilder<LocaleAuthControllerImp>(
         init: localeAuthControllerImp,
         builder: (controller)   {
           if (controller.isAuth)  {
             return const Dashboard();
           } else  {
-             controller.authenticat();
+              return  Container();
 
-            if (controller.isAuth) {
-              return const Dashboard();
-            } else {
-              return const Dashboard();
-            }
+          
           }
         },
-      ),
-    );
-  }
-}
+      ),*/
