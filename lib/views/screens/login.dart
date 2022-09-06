@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/core/constants/style.dart';
+import 'package:payqr/views/screens/dashboard.dart';
 import 'package:payqr/views/screens/personal_details.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
 import 'package:payqr/views/widgets/reusable_textfield.dart';
@@ -97,7 +98,9 @@ class _LoginState extends State<Login> {
               SizedBox(height: Get.height * 0.03),
               ReusableButton(
                 label: "Next",
-                onTap: () {},
+                onTap: () {
+                  Get.to( const Dashboard());
+                },
               ),
               const SizedBox(height: 40),
 

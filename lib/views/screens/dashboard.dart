@@ -2,6 +2,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/views/screens/qrcode/qrcodegen.dart';
+import 'package:payqr/views/screens/qrcode/qrcodescanner.dart';
 
 import '../../controller/dashboard_conroller.dart';
 import '../../core/constants/style.dart';
@@ -35,7 +36,7 @@ class Dashboard
             height: 38,
           ),
           onPressed: () {
-            Get.to(const QrcodeGen());
+            Get.to(const QrCodeScanner());
           },
         ),
         floatingActionButtonLocation:

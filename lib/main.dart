@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/controller/localauth_controller.dart';
+import 'package:payqr/test.dart';
 import 'package:payqr/views/screens/account_details.dart';
 import 'package:payqr/views/screens/confirmation_code.dart';
 import 'package:payqr/views/screens/dashboard.dart';
@@ -38,20 +39,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home:GetBuilder<LocaleAuthControllerImp>(
-        init: localeAuthControllerImp,
-        builder: (controller)   {
-          if (controller.isAuth)  {
-            return const QrCodeScanner();
-          } else  {
-              return  const Scaffold(
-                body: Center(child: CircularProgressIndicator()),
-              );
-
-          
-          }
-        },
-      ),
+      home: const  Dashboard()
     );
   }
 }
@@ -61,9 +49,11 @@ class MyApp extends StatelessWidget {
         init: localeAuthControllerImp,
         builder: (controller)   {
           if (controller.isAuth)  {
-            return const Dashboard();
+            return const Test();
           } else  {
-              return  Container();
+              return  const Scaffold(
+                body: Center(child: CircularProgressIndicator()),
+              );
 
           
           }

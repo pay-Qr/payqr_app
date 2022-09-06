@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:payqr/controller/qrcode/qrcodescanner_controller.dart';
+import 'package:payqr/views/widgets/reusable_button.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class QrCodeScanner extends StatelessWidget {
@@ -46,6 +47,11 @@ class QrCodeScanner extends StatelessWidget {
                 crossAxisAlignment:
                     CrossAxisAlignment.center,
                 children: <Widget>[
+                   SizedBox(
+                  
+                    height: Get.height *0.15 ,
+                     
+                  ),
                   Container(
                     width: Get.width * 0.8,
                     height: Get.height * 0.4,
@@ -70,14 +76,22 @@ class QrCodeScanner extends StatelessWidget {
                                     Get.width *
                                         .7)),
                   ),
-                  Text(
-                    controller.barcode != null
-                        ? '${controller.barcode!.code}'
-                        : 'No barcode found.',
-                    style: const TextStyle(
-                        color: Color.fromARGB(
-                            255, 0, 0, 0)),
-                    maxLines: 3,
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment:
+                          MainAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding:
+                              const EdgeInsets
+                                  .all(30),
+                          child: ReusableButton(
+                            label: "Scan QR Code",
+                            onTap: () {},
+                          ),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),
