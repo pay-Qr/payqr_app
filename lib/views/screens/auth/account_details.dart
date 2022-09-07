@@ -3,8 +3,7 @@ import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:payqr/controller/acountdetails_controller.dart';
 import 'package:payqr/core/constants/style.dart';
-import 'package:payqr/views/screens/dashboard.dart';
-import 'package:payqr/views/widgets/reusable_button.dart';
+ import 'package:payqr/views/widgets/reusable_button.dart';
 import 'package:payqr/views/widgets/reusable_textfield.dart';
 
 class AccountDetails extends StatelessWidget {

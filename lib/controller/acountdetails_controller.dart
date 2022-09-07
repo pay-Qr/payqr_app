@@ -66,9 +66,9 @@ class AccountDetailsControllerImp
      update();
       firestore
           .collection('users')
-          .doc("KlzLRTEq5DbDSJ8iJvnh")
-          .collection("userinfo")
-          .add({
+          .doc("PqsbdEq5DbDSJ8iJvnh")
+          
+          .set({
         'email': emailController.text,
         'phoneNumber': phoneNumberController.text,
         'city': cityController.text,

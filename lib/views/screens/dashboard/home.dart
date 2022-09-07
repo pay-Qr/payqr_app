@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-  import 'package:ionicons/ionicons.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:payqr/controller/home_controllre.dart';
 import 'package:payqr/views/screens/qrcode/qrcodescanner.dart';
- 
+
 import '../../../core/constants/style.dart';
 import '../../widgets/home/bankcard.dart';
 import '../../widgets/home/historyhome.dart';
@@ -15,7 +15,9 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    HomeControllerIpm homeControllerIpm = HomeControllerIpm();
+    HomeControllerIpm homeControllerIpm =
+        HomeControllerIpm();
+
     return Scaffold(
         backgroundColor: AppColor.background,
         body: Column(
@@ -31,14 +33,16 @@ class Home extends StatelessWidget {
                     icon: Ionicons
                         .arrow_down_circle_outline,
                     ontap: () {
-                      homeControllerIpm.goToRecieve();
+                      homeControllerIpm
+                          .goToRecieve();
                     }),
                 AppHomeBtn(
                     label: 'Sent',
                     icon: Ionicons
                         .arrow_up_circle_outline,
                     ontap: () {
-                      Get.to(const QrCodeScanner());
+                      Get.to(
+                          const QrCodeScanner());
                     }),
                 AppHomeBtn(
                     label: 'Exchange',
@@ -46,7 +50,7 @@ class Home extends StatelessWidget {
                     ontap: () {})
               ],
             ),
-           const  AppHistoryHome()
+            const AppHistoryHome()
           ],
         ));
   }
