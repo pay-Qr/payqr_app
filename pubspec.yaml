@@ -50,6 +50,7 @@ dependencies:
   sleek_circular_slider: ^2.0.1
   circular: ^0.0.5
   pinput: ^2.2.12
+  cloud_firestore: ^3.4.6
 
 dev_dependencies:
   flutter_test:

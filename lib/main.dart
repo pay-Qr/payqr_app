@@ -1,12 +1,18 @@
  
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:payqr/controller/localauth_controller.dart'; 
+import 'package:payqr/controller/localauth_controller.dart';
+import 'package:payqr/firebase_options.dart'; 
 import 'package:payqr/views/screens/auth/login.dart';
  
 import 'core/constants/style.dart';
  
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
