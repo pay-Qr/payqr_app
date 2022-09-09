@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/core/constants/style.dart';
-import 'package:payqr/views/widgets/otp.dart';
-import 'package:pinput/pinput.dart';
-
+import 'package:payqr/views/widgets/auth/otp.dart';
+ 
 class ConfirmationCode extends StatelessWidget {
   const ConfirmationCode({Key? key})
       : super(key: key);

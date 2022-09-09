@@ -2,9 +2,11 @@ import 'package:get/get.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:payqr/views/screens/dashboard.dart';
 
-abstract class LocaleAuthController extends GetxController {
-  LocalAuthentication auth = LocalAuthentication();
-  late bool isAuth = false;
+ abstract class LocaleAuthController
+    extends GetxController {
+  LocalAuthentication auth =
+      LocalAuthentication();
+   late bool isAuth = false;
   bool? canscan;
   chekbio();
   authenticat();
@@ -15,9 +17,13 @@ class LocaleAuthControllerImp extends LocaleAuthController {
   authenticat() async {
     bool authenticated = false;
     authenticated = await auth.authenticate(
-        localizedReason: 'Scan your fingerprint to authenticate',
+         localizedReason:
+            'Scan your fingerprint to authenticate',
         options: const AuthenticationOptions(
-            biometricOnly: true, stickyAuth: true, sensitiveTransaction: true));
+            biometricOnly: true,
+            stickyAuth: true,
+            sensitiveTransaction: true));
+ 
     if (authenticated) {
       isAuth = true;
       update();
@@ -28,7 +34,8 @@ class LocaleAuthControllerImp extends LocaleAuthController {
   chekbio() async {
     canscan = await auth.canCheckBiometrics;
     if (!canscan!) {
-      Get.to(Dashboard());
+       Get.to(const Dashboard());
+ 
     }
     authenticat();
   }
@@ -36,6 +43,8 @@ class LocaleAuthControllerImp extends LocaleAuthController {
   @override
   void onInit() {
     chekbio();
+ 
+ 
     super.onInit();
   }
 }

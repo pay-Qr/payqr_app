@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
-import '../../core/constants/style.dart';
+import '../../../core/constants/style.dart';
 
 class OTP extends StatelessWidget {
   const OTP({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final length = 4;
+    
     const borderColor =
         AppColor.primary;
     const color =

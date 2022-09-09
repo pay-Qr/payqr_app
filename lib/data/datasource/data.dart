@@ -39,7 +39,7 @@ List<HistoryModel> data = [
       const Color.fromARGB(255, 224, 187, 119)),
 ];
 
-List<BarHistory> barData = const [
+List<BarHistory> year = const [
   BarHistory("Jan", 2000, Color.fromARGB(255, 92, 195, 135)),
   BarHistory("Feb", 1900, Color.fromARGB(255, 116, 188, 240)),
   BarHistory("Mar", 2100, Color.fromARGB(255, 242, 179, 96)),
@@ -52,4 +52,12 @@ List<BarHistory> barData = const [
   BarHistory("Oct", 2300, AppColor.primary),
   BarHistory("Nov", 1500, AppColor.primary),
   BarHistory("Dec", 2000, Color.fromARGB(255, 194, 101, 154)),
+];
+
+List<BarHistory> monthes = const [
+  BarHistory("1", 2000, Color.fromARGB(255, 92, 195, 135)),
+  BarHistory("2", 1900, Color.fromARGB(255, 116, 188, 240)),
+  BarHistory("3", 2100, Color.fromARGB(255, 242, 179, 96)),
+  BarHistory("4", 1800, Color.fromARGB(255, 137, 158, 197)),
+   
 ];

@@ -2,13 +2,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:payqr/controller/localauth_controller.dart';
-import 'package:payqr/views/screens/account_details.dart';
-import 'package:payqr/views/screens/confirmation_code.dart';
-import 'package:payqr/views/screens/dashboard.dart';
-import 'package:payqr/views/screens/identity_verification.dart';
-import 'package:payqr/views/screens/login.dart';
-import 'package:payqr/views/screens/personal_details.dart';
+import 'package:payqr/controller/localauth_controller.dart'; 
+import 'package:payqr/views/screens/auth/login.dart';
  
 import 'core/constants/style.dart';
  
@@ -40,37 +35,25 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: Dashboard(),
-    );
-  }
-}
-
-
-// GetBuilder<LocaleAuthControllerImp>(
-//         init: localeAuthControllerImp,
-//         builder: (controller)   {
-//           if (controller.isAuth)  {
-//             return const Dashboard();
-//           } else  {
-//               return  const Scaffold(
-//                 body: Center(child: CircularProgressIndicator()),
-//               );
-
-          
-//           }
-//         },
-//       ),
-
-/*
- GetBuilder<LocaleAuthControllerImp>(
+ 
+      home:GetBuilder<LocaleAuthControllerImp>(
         init: localeAuthControllerImp,
         builder: (controller)   {
           if (controller.isAuth)  {
-            return const Dashboard();
+            return const Login();
           } else  {
-              return  Container();
+              return  const Scaffold(
+                body: Center(child: CircularProgressIndicator()),
+              );
 
           
           }
         },
-      ),*/
+      ),
+ 
+    );
+  }
+}
+ 
+ 
+ 

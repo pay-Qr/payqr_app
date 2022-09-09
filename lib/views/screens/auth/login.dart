@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
- import 'package:payqr/core/constants/style.dart';
+import 'package:payqr/core/constants/style.dart';
+import 'package:payqr/views/screens/dashboard.dart';
+import 'package:payqr/views/screens/auth/personal_details.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
 import 'package:payqr/views/widgets/reusable_textfield.dart';
 
@@ -12,7 +14,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final TextEditingController _phoneController =
+  final TextEditingController phoneController =
       TextEditingController();
 
   @override
@@ -61,21 +63,24 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-        
+
               SizedBox(height: Get.height * 0.07),
               // PHONE NUMBER TEXT FIELD
               Container(
                   decoration: const BoxDecoration(
                     boxShadow: [
                       BoxShadow(
-                        color: AppColor.background,
+                        color:
+                            AppColor.background,
                         offset: Offset(4.0, 4.0),
                         blurRadius: 15.0,
                         spreadRadius: 1.0,
                       ),
                       BoxShadow(
-                        color: AppColor.background,
-                        offset: Offset(-4.0, -4.0),
+                        color:
+                            AppColor.background,
+                        offset:
+                            Offset(-4.0, -4.0),
                         blurRadius: 15.0,
                         spreadRadius: 1.0,
                       ),
@@ -86,39 +91,41 @@ class _LoginState extends State<Login> {
                     hintText:
                         "Enter your Phone Number",
                     icon: Icons.phone,
-                    keyboardType: TextInputType.phone,
+                    keyboardType:
+                        TextInputType.phone,
                   )),
-        
+
               SizedBox(height: Get.height * 0.03),
               ReusableButton(
                 label: "Next",
-                onTap: () {},
+                onTap: () {
+                  Get.to( const Dashboard());
+                },
               ),
               const SizedBox(height: 40),
-        
+
               // DON'T HAVE AN ACCOUNT? AND SIGN UP PROMPT BUTTON TEXT
               Row(
                 mainAxisAlignment:
                     MainAxisAlignment.center,
                 children: [
-                    Text(
+                  Text(
                     "Don't have an account?",
                     style: TextStyle(
-                      color: AppColor.text.withOpacity(.6),
-                    
-                       
+                      color: AppColor.text
+                          .withOpacity(.6),
                     ),
                   ),
-                   
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(const PersonalDetails());
+                    },
                     child: const Text(
                       "Sign Up",
                       style: TextStyle(
                         color: AppColor.blue,
-                      
-                        fontWeight: FontWeight.bold,
-                        
+                        fontWeight:
+                            FontWeight.bold,
                       ),
                     ),
                   ),

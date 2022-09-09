@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:payqr/core/constants/style.dart';
-import 'package:payqr/views/screens/account_details.dart';
+import 'package:payqr/views/screens/auth/account_details.dart';
+import 'package:payqr/views/screens/auth/login.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
 import 'package:payqr/views/widgets/reusable_textfield.dart';
 
-import '../../controller/acountdetails_controller.dart';
+import '../../../controller/acountdetails_controller.dart';
 
  
 class PersonalDetails extends StatelessWidget {
@@ -92,6 +93,34 @@ class PersonalDetails extends StatelessWidget {
 
                   Get.to(() => const AccountDetails());
                 },
+              ),
+          
+               Row(
+                mainAxisAlignment:
+                    MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Already have an account?",
+                    style: TextStyle(
+                      color: AppColor.text
+                          .withOpacity(.6),
+                    ),
+                  ),
+                  
+                  TextButton(
+                    onPressed: () {
+                      Get.to(const Login());
+                    },
+                    child: const Text(
+                      "Login",
+                      style: TextStyle(
+                        color: AppColor.blue,
+                        fontWeight:
+                            FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
