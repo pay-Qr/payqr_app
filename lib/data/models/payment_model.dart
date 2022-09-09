@@ -1,37 +1,38 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/constants/icon.dart';
 
 class HistoryModel {
-  final String place;
-  final double price;
-  final DateTime time;
-  final IconData icon;
-  final Color color;
+  final String? name;
+  final String? ccp;
+  final int? amount;
+  final Timestamp? time;
+  final String? item;
 
-  HistoryModel(
-    this.icon,
-    this.place,
-    this.price,
+  HistoryModel({
+    this.ccp,
+    this.name,
+    this.amount,
     this.time,
-    this.color,
-  );
+    this.item,
+  });
 }
 
 class ItemModel {
   final IconData icon;
-  final Color title;
+  final Color color;
 
   ItemModel(
     this.icon,
-    this.title,
+    this.color,
   );
 }
 
-Map itemModel = {
+Map<String, ItemModel> itemModel = {
   "SuperMarket": ItemModel(AppIcon.shoping,
       const Color.fromARGB(255, 207, 82, 73)),
-  "Food": ItemModel(AppIcon.food,
+  "food": ItemModel(AppIcon.food,
       const Color.fromARGB(255, 244, 166, 89)),
   "Game": ItemModel(AppIcon.game,
       const Color.fromARGB(255, 134, 137, 228)),

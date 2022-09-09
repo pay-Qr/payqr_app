@@ -1,6 +1,8 @@
+ 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:payqr/controller/dashboard_conroller.dart';
 import 'package:payqr/controller/home_controllre.dart';
 import 'package:payqr/views/screens/qrcode/qrcodescanner.dart';
 
@@ -17,41 +19,56 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     HomeControllerIpm homeControllerIpm =
         HomeControllerIpm();
+    DashboardControllerImp
+        dashboardControllerImp =
+        Get.put(DashboardControllerImp());
+
+     
 
     return Scaffold(
         backgroundColor: AppColor.background,
-        body: Column(
-          children: [
-            const AppHomeBar(),
-            const AppBankCard(),
-            Row(
-              mainAxisAlignment:
-                  MainAxisAlignment.center,
+        body: GetBuilder<DashboardControllerImp>(
+          init: dashboardControllerImp,
+          builder: (controller) {
+            return Column(
               children: [
-                AppHomeBtn(
-                    label: 'Recieve',
-                    icon: Ionicons
-                        .arrow_down_circle_outline,
-                    ontap: () {
-                      homeControllerIpm
-                          .goToRecieve();
-                    }),
-                AppHomeBtn(
-                    label: 'Sent',
-                    icon: Ionicons
-                        .arrow_up_circle_outline,
-                    ontap: () {
-                      Get.to(
-                          const QrCodeScanner());
-                    }),
-                AppHomeBtn(
-                    label: 'Exchange',
-                    icon: Ionicons.repeat,
-                    ontap: () {})
+                const AppHomeBar(),
+                controller.isloading
+                    ? const Center(
+                        child:
+                            CircularProgressIndicator(),
+                      )
+                    : const AppBankCard(),
+                Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.center,
+                  children: [
+                    AppHomeBtn(
+                        label: 'Recieve',
+                        icon: Ionicons
+                            .arrow_down_circle_outline,
+                        ontap: () {
+                          homeControllerIpm
+                              .goToRecieve();
+                        }),
+                    AppHomeBtn(
+                        label: 'Sent',
+                        icon: Ionicons
+                            .arrow_up_circle_outline,
+                        ontap: () {
+                          Get.to(
+                              const QrCodeScanner());
+                        }),
+                    AppHomeBtn(
+                        label: 'Exchange',
+                        icon: Ionicons.repeat,
+                        ontap: () {})
+                  ],
+                ),
+                const AppHistoryHome()
               ],
-            ),
-            const AppHistoryHome()
-          ],
+            );
+          },
         ));
   }
 }
