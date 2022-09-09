@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ionicons/ionicons.dart';
+import 'package:payqr/controller/dashboard_conroller.dart';
 import 'package:payqr/controller/pageview_controller.dart';
+import 'package:payqr/data/models/payment_model.dart';
 import 'package:payqr/views/widgets/history/historywidget.dart';
 
 import '../../../core/constants/style.dart';
@@ -14,6 +17,7 @@ class History extends StatelessWidget {
   Widget build(BuildContext context) {
     PageViewControllerImp pageViewControllerImp =
         Get.put(PageViewControllerImp());
+        List<HistoryModel> data = Get.find<DashboardControllerImp>().data;
     return Scaffold(
         backgroundColor: AppColor.background,
         body: Padding(
@@ -70,77 +74,99 @@ class History extends StatelessWidget {
                   )
                 ],
               ),
-              Expanded(
-                child: PageView(
-                  physics: const NeverScrollableScrollPhysics(),
-                  controller:
-                      pageViewControllerImp
-                          .controller,
-                  children: [
+        data.isEmpty
+            ? Expanded(
+                child: Center(
+                    child: Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.center,
+                  children: const [
+                    Icon(Ionicons
+                        .cloud_offline_outline),
                     SizedBox(
-                      height: Get.height * 0.32,
-                      child: ListView.builder(
-                        scrollDirection:
-                            Axis.horizontal,
-                        itemCount: 12,
-                        itemBuilder:
-                            (context, index) {
-                          return Column(
-                            mainAxisAlignment:
-                                MainAxisAlignment
-                                    .end,
-                            children: [
-                              AppHistoryBar(
-                                month: year[index]
-                                    .month,
-                                amount:
-                                    year[index]
-                                        .amount,
-                                color: year[index]
-                                    .color,
-                              ),
-                            ],
-                          );
-                        },
-                      ),
+                      width: 10,
                     ),
-                    SizedBox(
-                      height: Get.height * 0.32,
-                      child: ListView.builder(
-                        scrollDirection:
-                            Axis.horizontal,
-                        itemCount: 4,
-                        itemBuilder:
-                            (context, index) {
-                          return Column(
-                            mainAxisAlignment:
-                                MainAxisAlignment
-                                    .end,
-                            children: [
-                              AppHistoryBar(
-                                month:
-                                    monthes[index]
-                                        .month,
-                                amount:
-                                    monthes[index]
-                                        .amount,
-                                color:
-                                    monthes[index]
-                                        .color,
-                              ),
-                            ],
-                          );
-                        },
-                      ),
-                    ),
-                    Container( )
+                    Text('No History Available')
                   ],
+                )),
+              )
+            :    Expanded(
+              child: Column(
+                children: [
+                    Expanded(
+                  child: PageView(
+                    physics: const NeverScrollableScrollPhysics(),
+                    controller:
+                        pageViewControllerImp
+                            .controller,
+                    children: [
+                      SizedBox(
+                        height: Get.height * 0.32,
+                        child: ListView.builder(
+                          scrollDirection:
+                              Axis.horizontal,
+                          itemCount: 12,
+                          itemBuilder:
+                              (context, index) {
+                            return Column(
+                              mainAxisAlignment:
+                                  MainAxisAlignment
+                                      .end,
+                              children: [
+                                AppHistoryBar(
+                                  month: year[index]
+                                      .month,
+                                  amount:
+                                      year[index]
+                                          .amount,
+                                  color: year[index]
+                                      .color,
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      ),
+                      SizedBox(
+                        height: Get.height * 0.32,
+                        child: ListView.builder(
+                          scrollDirection:
+                              Axis.horizontal,
+                          itemCount: 4,
+                          itemBuilder:
+                              (context, index) {
+                            return Column(
+                              mainAxisAlignment:
+                                  MainAxisAlignment
+                                      .end,
+                              children: [
+                                AppHistoryBar(
+                                  month:
+                                      monthes[index]
+                                          .month,
+                                  amount:
+                                      monthes[index]
+                                          .amount,
+                                  color:
+                                      monthes[index]
+                                          .color,
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      ),
+                      Container( )
+                    ],
+                  ),
                 ),
+                SizedBox(
+                  height: Get.height * 0.06,
+                ),
+                const AppHistoryPage()
+                ],
               ),
-              SizedBox(
-                height: Get.height * 0.06,
-              ),
-              const AppHistoryPage()
+            )
             ],
           ),
         ));
