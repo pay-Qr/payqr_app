@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; 
+import 'package:get/get.dart';
 import 'package:payqr/views/screens/dashboard.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -15,7 +15,7 @@ abstract class QrCodeScannerController
   QRViewController? controller;
   Barcode? barcode;
   Map<String, dynamic>? data;
-  
+
   onQRViewCreated(QRViewController controller);
   confirmPayment();
   late String type = 'null';
@@ -24,6 +24,7 @@ abstract class QrCodeScannerController
       .collection('users')
       .doc("PqsbdEq5DbDSJ8iJvnh")
       .collection('transaction');
+  late bool isloading = false;
 }
 
 class QrCodeScannerControllerImp
@@ -46,11 +47,12 @@ class QrCodeScannerControllerImp
         transition: Transition.downToUp,
       );
     });
-
   }
 
   @override
   confirmPayment() {
+    isloading = true;
+    update();
     if (type == 'null') {
       Get.snackbar(
         "Error",
@@ -74,7 +76,9 @@ class QrCodeScannerControllerImp
             "your transaction has been registered",
             backgroundColor: Colors.green,
             colorText: Colors.white));
-            Get.off(() => const Dashboard());
+        isloading = false;
+        update();
+        Get.off(() => const Dashboard());
       } catch (e) {
         Get.snackbar(
           "Error",

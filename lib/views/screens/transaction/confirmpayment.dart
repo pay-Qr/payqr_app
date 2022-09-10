@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:payqr/controller/home_controllre.dart';
 import 'package:payqr/controller/qrcode/qrcodescanner_controller.dart';
 import 'package:payqr/core/constants/style.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
@@ -14,6 +15,8 @@ class ConfirmPayment extends StatelessWidget {
   Widget build(BuildContext context) {
     QrCodeScannerControllerImp controller =
         Get.put(QrCodeScannerControllerImp());
+    HomeControllerIpm homeControllerIpm =
+        Get.put(HomeControllerIpm());
 
     return Scaffold(
       appBar: AppBar(
@@ -35,7 +38,9 @@ class ConfirmPayment extends StatelessWidget {
       body:
           GetBuilder<QrCodeScannerControllerImp>(
         init: controller,
-        builder: (controller) => Center(
+        builder: (controller) => controller.isloading == true ? const  CircularProgressIndicator(
+          color: AppColor.primary,
+        ) :Center(
           child: Column(
             mainAxisAlignment:
                 MainAxisAlignment.spaceAround,
@@ -127,10 +132,11 @@ class ConfirmPayment extends StatelessWidget {
                 padding: const EdgeInsets.all(15),
                 child: ReusableButton(
                     label: 'Confirm',
-                    onTap: () {
-                      controller.confirmPayment();
-                     
+                    onTap: () async {
+                      await controller
+                          .confirmPayment();
 
+                      homeControllerIpm.getData();
                     }),
               )
             ],

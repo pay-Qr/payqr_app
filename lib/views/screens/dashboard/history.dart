@@ -101,115 +101,109 @@ class History extends StatelessWidget {
                       )),
                     )
                   : Expanded(
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: PageView(
-                           
-                             
-                              controller:
-                                  pageViewControllerImp
-                                      .controller,
-                              children: [
-                                 // week
-                                  AppHistoryPage(
-                                      data: controller.weekdata ,
-                                      total: controller.weektotal,
-                                      title: 'Week',
-                                    
-                                  ) ,
-                              
-                                // month
-                                Column(
-                                  children: [
-                                    SizedBox(
-                                      height:
-                                          Get.height *
-                                              0.32,
-                                      child: ListView
-                                          .builder(
-                                        scrollDirection:
-                                            Axis.horizontal,
-                                        itemCount:
-                                            4,
-                                        itemBuilder:
-                                            (context,
-                                                index) {
-                                          return Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            children: [
-                                              AppHistoryBar(
-                                                month: monthes[index].month,
-                                                amount: monthes[index].amount,
-                                                color: monthes[index].color,
-                                              ),
-                                            ],
-                                          );
-                                        },
+                    child: PageView(
+                   
+                     
+                      controller:
+                          pageViewControllerImp
+                              .controller,
+                      children: [
+                         // week
+                          AppHistoryPage(
+                              data: controller.weekdata ,
+                              total: controller.weektotal,
+                              title: 'Week',
+                            
+                          ) ,
+                      
+                        // month
+                        Column(
+                          children: [
+                            SizedBox(
+                              height:
+                                  Get.height *
+                                      0.32,
+                              child: ListView
+                                  .builder(
+                                scrollDirection:
+                                    Axis.horizontal,
+                                itemCount:
+                                    4,
+                                itemBuilder:
+                                    (context,
+                                        index) {
+                                  return Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.end,
+                                    children: [
+                                      AppHistoryBar(
+                                        month: monthes[index].month,
+                                        amount: monthes[index].amount,
+                                        color: monthes[index].color,
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height:
-                                          Get.height *
-                                              0.06,
-                                    ),
-                                      AppHistoryPage(
-                                         data: controller.monthdata ,
-                                      total: controller.monthtotal,
-                                      title: 'Month',
-                                      )
-                                  ],
-                                ),
-                                  // year
-                                Column(
-                                  children: [
-                                    SizedBox(
-                                      height:
-                                          Get.height *
-                                              0.32,
-                                      child: ListView
-                                          .builder(
-                                        scrollDirection:
-                                            Axis.horizontal,
-                                        itemCount:
-                                            12,
-                                        itemBuilder:
-                                            (context,
-                                                index) {
-                                          return Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            children: [
-                                              AppHistoryBar(
-                                                month: year[index].month,
-                                                amount: year[index].amount,
-                                                color: year[index].color,
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height:
-                                          Get.height *
-                                              0.06,
-                                    ),
-                                AppHistoryPage(
-                                      data: controller.yeardata ,
-                                      total: controller.yeartotal,
-                                      title: 'Year',
-                                    )
-                                  ],
-                                ),
-                               
-                              ], 
+                                    ],
+                                  );
+                                },
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    )
+                            SizedBox(
+                              height:
+                                  Get.height *
+                                      0.06,
+                            ),
+                              AppHistoryPage(
+                                 data: controller.monthdata ,
+                              total: controller.monthtotal,
+                              title: 'Month',
+                              )
+                          ],
+                        ),
+                          // year
+                        Column(
+                          children: [
+                            SizedBox(
+                              height:
+                                  Get.height *
+                                      0.32,
+                              child: ListView
+                                  .builder(
+                                scrollDirection:
+                                    Axis.horizontal,
+                                itemCount:
+                                    12,
+                                itemBuilder:
+                                    (context,
+                                        index) {
+                                  return Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.end,
+                                    children: [
+                                      AppHistoryBar(
+                                        month: year[index].month,
+                                        amount: year[index].amount,
+                                        color: year[index].color,
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ),
+                            ),
+                            SizedBox(
+                              height:
+                                  Get.height *
+                                      0.06,
+                            ),
+                        AppHistoryPage(
+                              data: controller.yeardata ,
+                              total: controller.yeartotal,
+                              title: 'Year',
+                            )
+                          ],
+                        ),
+                       
+                      ], 
+                    ),
+                  )
             ],
           ),
         );

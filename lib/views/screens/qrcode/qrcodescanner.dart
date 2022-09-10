@@ -13,6 +13,7 @@ class QrCodeScanner extends StatelessWidget {
   Widget build(BuildContext context) {
     QrCodeScannerControllerImp controller =
         Get.put(QrCodeScannerControllerImp());
+    
     return GetBuilder<QrCodeScannerControllerImp>(
         init: controller,
         builder: ((controller) {
