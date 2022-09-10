@@ -36,7 +36,6 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  firebase_core: ^1.21.1
   pretty_qr_code: ^2.0.2
   qr_code_scanner: ^1.0.1
   get: ^4.6.5
@@ -47,7 +46,21 @@ dependencies:
   awesome_card: ^1.1.7
   flutter_credit_card: ^3.0.3
   stacked_bar_chart: ^1.1.0+2
+  sleek_circular_slider: ^2.0.1
+  circular: ^0.0.5
+  pinput: ^2.2.12
+    
+  jiffy: ^5.0.0
+  
 
+ 
+  cloud_firestore: ^3.4.6
+ 
+  firebase_auth: ^3.7.0
+  firebase_core: ^1.21.1
+  provider: ^6.0.3
+  country_code_picker: ^2.0.2
+ 
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -90,5 +103,14 @@ flutter:
         - asset: assets/fonts/Poppins/Poppins-Regular.ttf
         - asset: assets/fonts/Poppins/Poppins-Bold.ttf
           weight: 700
+    - family: Amaranth
+      fonts:
+        - asset: assets/fonts/Amaranth/Amaranth-Bold.ttf
+        - asset: assets/fonts/Amaranth/Amaranth-BoldItalic.ttf
+        - asset: assets/fonts/Amaranth/Amaranth-Italic.ttf
+        - asset: assets/fonts/Amaranth/Amaranth-Regular.ttf
+    - family: TitanOne
+      fonts:
+        - asset: assets/fonts/TitanOne/TitanOne-Regular.ttf
 
   
