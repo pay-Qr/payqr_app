@@ -41,23 +41,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
- GetBuilder<LocaleAuthControllerImp>(
-  
-      home:GetBuilder<LocaleAuthControllerImp>(
-         init: localeAuthControllerImp,
-        builder: (controller)   {
-          if (controller.isAuth)  {
-            return const Login();
-          } else  {
-              return  const Scaffold(
-                body: Center(child: CircularProgressIndicator()),
-              );
 
-          
-          }
-        },
- 
-      ),
  
      );
   }
@@ -65,3 +49,19 @@ class MyApp extends StatelessWidget {
  
  
  
+
+
+//  GetBuilder<LocaleAuthControllerImp>(
+//         init: localeAuthControllerImp,
+//         builder: (controller)   {
+//           if (controller.isAuth)  {
+//             return const Login();
+//           } else  {
+//               return  const Scaffold(
+//                 body: Center(child: CircularProgressIndicator()),
+//               );
+
+          
+//           }
+//         },
+//       ),
