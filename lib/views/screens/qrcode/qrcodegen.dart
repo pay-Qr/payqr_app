@@ -61,8 +61,8 @@ class QrcodeGen extends StatelessWidget {
               child: Center(
                 child: PrettyQr(
                   size: 200,
-                  image: const AssetImage(
-                      'assets/images/bna.png'),
+                 /*image: const AssetImage(
+                      'assets/images/bna.png'),*/
                   data:  controller.data ,
                   errorCorrectLevel:
                       QrErrorCorrectLevel.H,

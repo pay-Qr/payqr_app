@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+ import '../../../controller/home_controllre.dart';
 import '../../../core/constants/style.dart';
 
 class AppHomeBar extends StatelessWidget {
-  const AppHomeBar({Key? key}) : super(key: key);
+  final void Function()? ontap;
+  const AppHomeBar({Key? key, this.ontap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+        HomeControllerIpm homeControllerIpm = Get.put(HomeControllerIpm());
+
+     return Padding(
       padding: const EdgeInsets.only(
           top: 20,
           left: 15,
@@ -28,24 +33,30 @@ class AppHomeBar extends StatelessWidget {
                 width: 10,
               ),
               Text(
-                "Hay Theer ",
+                "Hay There ",
                 style: TextStyle(
                   fontSize: 20,
                 ),
               )
             ],
           ),
-          Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-                color: AppColor.primary,
-                borderRadius:
-                    BorderRadius.circular(25)),
-            child: const Icon(
-              Icons.add,
-              size: 30,
-              color: Colors.white,
+          InkWell(
+            onTap: (() {
+              homeControllerIpm.getData();
+        
+            }),
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  color: AppColor.primary,
+                  borderRadius:
+                      BorderRadius.circular(25)),
+              child: const Icon(
+                Icons.add,
+                size: 30,
+                color: Colors.white,
+              ),
             ),
           )
         ],
