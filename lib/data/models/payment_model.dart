@@ -9,9 +9,9 @@ class HistoryModel {
   final int? amount;
   final Timestamp? time;
   final String? item;
-
+ 
   HistoryModel({
-    this.ccp,
+     this.ccp,
     this.name,
     this.amount,
     this.time,

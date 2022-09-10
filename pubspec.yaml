@@ -49,6 +49,11 @@ dependencies:
   sleek_circular_slider: ^2.0.1
   circular: ^0.0.5
   pinput: ^2.2.12
+    
+  jiffy: ^5.0.0
+  
+
+ 
    cloud_firestore: ^3.4.6
  
   firebase_auth: ^3.7.0
@@ -56,7 +61,7 @@ dependencies:
   provider: ^6.0.3
   country_code_picker: ^2.0.2
  
-dev_dependencies:
+ dev_dependencies:
   flutter_test:
     sdk: flutter
 

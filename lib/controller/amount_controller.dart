@@ -5,7 +5,7 @@ import '../views/screens/qrcode/qrcodegen.dart';
 
 abstract class AmountController
     extends GetxController {
-  String val = "0";
+  int val =   0;
   changed();
   submit();
 }
@@ -28,14 +28,14 @@ class AmountControllerImp
 
   @override
   changed() {
-    val = amount.text;
+   val = int.parse(amount.text);
 
     update();
   }
 
   @override
   submit() {
-    if (val == "0") {
+    if (val == 0) {
       Get.snackbar("Error", "Amount can't be 0",
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.red,
