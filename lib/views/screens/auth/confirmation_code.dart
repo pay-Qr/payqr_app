@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/core/constants/style.dart';
 import 'package:payqr/views/widgets/auth/otp.dart';
- 
+
+import '../../../controller/auth/phoneverfiy_controller.dart';
+
 class ConfirmationCode extends StatelessWidget {
-  const ConfirmationCode({Key? key})
-      : super(key: key);
+  const ConfirmationCode({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    PhoneAuthControllerImp
+        phoneAuthControllerImp =
+        Get.put(PhoneAuthControllerImp());
+
     return Scaffold(
       backgroundColor: AppColor.background,
       appBar: AppBar(
@@ -23,12 +30,13 @@ class ConfirmationCode extends StatelessWidget {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(30),
+        padding: const EdgeInsets.all(30), 
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment:
+              MainAxisAlignment.center,
           children: [
             Text(
-                "Please enter the 6 digit code sent to your phone number\n +234 803 000 0000",
+                "Please enter the 6 digit code sent to your phone number\n ${phoneAuthControllerImp.phoneController.text} ",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: AppColor.text
@@ -38,7 +46,10 @@ class ConfirmationCode extends StatelessWidget {
             const OTP(),
             SizedBox(height: Get.height * .02),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                phoneAuthControllerImp
+                    .verifyPhoneNumber();
+              },
               child: const Text(
                 "Resend Code",
                 style: TextStyle(

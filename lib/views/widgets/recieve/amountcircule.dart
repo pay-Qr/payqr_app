@@ -1,7 +1,7 @@
 import 'package:circular/circular.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:payqr/controller/amount_controller.dart';
+import 'package:payqr/controller/transaction/amount_controller.dart';
 import 'package:payqr/core/constants/style.dart';
 
 class AppAmountCircule extends StatelessWidget {

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:payqr/controller/auth/phoneverfiy_controller.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../../core/constants/style.dart';
@@ -8,6 +10,7 @@ class OTP extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    PhoneAuthControllerImp phoneAuthControllerImp = Get.put(PhoneAuthControllerImp());
     
     const borderColor =
         AppColor.primary;
@@ -28,6 +31,9 @@ class OTP extends StatelessWidget {
     return SizedBox(
                 height: 68,
                 child: Pinput(
+                  onCompleted: (value) {
+                    phoneAuthControllerImp.checkcode( value);
+                  },
                   length: 6,
                   defaultPinTheme:
                       defaultPinTheme,
@@ -42,6 +48,7 @@ class OTP extends StatelessWidget {
                           color: borderColor),
                     ),
                   ),
+                  
                   errorPinTheme:
                       defaultPinTheme.copyWith(
                     decoration: BoxDecoration(

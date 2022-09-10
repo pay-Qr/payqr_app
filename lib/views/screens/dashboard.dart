@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
  import 'package:payqr/views/screens/qrcode/qrcodescanner.dart';
 
-import '../../controller/dashboard_conroller.dart';
+import '../../controller/dashbord/dashboard_conroller.dart';
 import '../../core/constants/style.dart';
 import '../../data/datasource/static.dart';
 
@@ -19,13 +19,11 @@ class Dashboard
     return GetBuilder<DashboardControllerImp>(
         builder: (controller) {
       return Scaffold(
-        body: SafeArea(
-          child: IndexedStack(
-            children: [
-              widgetOptions.elementAt(
-                  controller.currentPage),
-            ],
-          ),
+        body: IndexedStack(
+          children: [
+            widgetOptions.elementAt(
+                controller.currentPage),
+          ],
         ),
         floatingActionButton:
             FloatingActionButton(
