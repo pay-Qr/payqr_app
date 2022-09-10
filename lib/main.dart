@@ -12,9 +12,10 @@ import 'core/constants/style.dart';
  
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
+   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+ 
   runApp(const MyApp());
 }
 
@@ -40,10 +41,10 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const Dashboard()
-      
-      /*GetBuilder<LocaleAuthControllerImp>(
-        init: localeAuthControllerImp,
+ GetBuilder<LocaleAuthControllerImp>(
+  
+      home:GetBuilder<LocaleAuthControllerImp>(
+         init: localeAuthControllerImp,
         builder: (controller)   {
           if (controller.isAuth)  {
             return const Login();
@@ -55,9 +56,12 @@ class MyApp extends StatelessWidget {
           
           }
         },
-      ),*/
-    );
+ 
+      ),
+ 
+     );
   }
 }
-
+ 
+ 
  
