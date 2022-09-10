@@ -1,10 +1,10 @@
  import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:payqr/controller/dashbord/dashboard_conroller.dart';
- 
+  
 import '../../data/models/payment_model.dart';
 import '../../views/screens/transaction/recieve.dart';
+import '../dashboard_conroller.dart';
 
 abstract class HomeController
     extends GetxController {

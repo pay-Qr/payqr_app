@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:payqr/controller/dashboard_conroller.dart';
-import 'package:payqr/controller/home_controllre.dart';
-import 'package:payqr/views/screens/qrcode/qrcodescanner.dart';
+ import 'package:payqr/views/screens/qrcode/qrcodescanner.dart';
 
+import '../../../controller/dashbord/home_controllre.dart';
 import '../../../core/constants/style.dart';
 import '../../widgets/home/bankcard.dart';
 import '../../widgets/home/historyhome.dart';

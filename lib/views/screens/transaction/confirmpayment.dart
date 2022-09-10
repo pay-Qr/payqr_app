@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:payqr/controller/home_controllre.dart';
-import 'package:payqr/controller/qrcode/qrcodescanner_controller.dart';
+ import 'package:payqr/controller/qrcode/qrcodescanner_controller.dart';
 import 'package:payqr/core/constants/style.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
 import 'package:payqr/views/widgets/selecttype.dart';
+
+import '../../../controller/dashbord/home_controllre.dart';
 
 class ConfirmPayment extends StatelessWidget {
   const ConfirmPayment({Key? key})

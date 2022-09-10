@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:payqr/controller/dashboard_conroller.dart';
-import 'package:payqr/controller/home_controllre.dart';
-import 'package:payqr/controller/pageview_controller.dart';
+ import 'package:payqr/controller/pageview_controller.dart';
 import 'package:payqr/data/models/payment_model.dart';
 import 'package:payqr/views/widgets/history/historywidget.dart';
 
+import '../../../controller/dashbord/home_controllre.dart';
 import '../../../core/constants/style.dart';
 import '../../../data/datasource/data.dart';
 import '../../widgets/history/hisorybar.dart';

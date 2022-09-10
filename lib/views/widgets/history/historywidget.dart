@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:payqr/controller/home_controllre.dart';
-import 'package:payqr/data/models/payment_model.dart';
+ import 'package:payqr/data/models/payment_model.dart';
+
+import '../../../controller/dashbord/home_controllre.dart';
 
 class AppHistoryPage extends StatelessWidget {
   final List<HistoryModel> data;
