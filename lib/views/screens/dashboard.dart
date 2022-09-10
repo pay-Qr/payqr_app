@@ -19,11 +19,13 @@ class Dashboard
     return GetBuilder<DashboardControllerImp>(
         builder: (controller) {
       return Scaffold(
-        body: IndexedStack(
-          children: [
-            widgetOptions.elementAt(
-                controller.currentPage),
-          ],
+        body: SafeArea(
+          child: IndexedStack(
+            children: [
+              widgetOptions.elementAt(
+                  controller.currentPage),
+            ],
+          ),
         ),
         floatingActionButton:
             FloatingActionButton(
