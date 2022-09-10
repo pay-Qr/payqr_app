@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:payqr/controller/auth/phoneverfiy_controller.dart';
 import 'package:payqr/core/constants/style.dart';
 import 'package:payqr/views/screens/auth/account_details.dart';
 import 'package:payqr/views/screens/auth/login.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
 import 'package:payqr/views/widgets/reusable_textfield.dart';
 
-import '../../../controller/acountdetails_controller.dart';
+import '../../../controller/auth/acountdetails_controller.dart';
 
  
 class PersonalDetails extends StatelessWidget {
@@ -17,6 +18,7 @@ class PersonalDetails extends StatelessWidget {
   Widget build(BuildContext context) {
      AccountDetailsControllerImp accountDetailsControllerImp =
         Get.put(AccountDetailsControllerImp());
+        TextEditingController phone = Get.find<PhoneAuthControllerImp>().phoneController;
     return Scaffold(
       backgroundColor: AppColor.background,
       appBar: AppBar(
@@ -66,7 +68,7 @@ class PersonalDetails extends StatelessWidget {
                         "Enter your Phone Number",
                         keyboardType: TextInputType.phone,
                     icon: Ionicons.call_outline,
-                    controller: accountDetailsControllerImp.phoneNumberController,
+                    controller: phone,
                   ),
                   const SizedBox(height: 5),
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controller/qrcode/qrcodescanner_controller.dart';
-import '../../core/constants/style.dart';
-import '../../data/models/payment_model.dart';
+import '../../../controller/qrcode/qrcodescanner_controller.dart';
+import '../../../core/constants/style.dart';
+import '../../../data/models/payment_model.dart';
 
 class SelectType extends StatelessWidget {
   const SelectType({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:payqr/controller/dashboard_conroller.dart';
+import 'package:payqr/controller/dashbord/dashboard_conroller.dart';
 
  
 class AppBankCard extends StatelessWidget {

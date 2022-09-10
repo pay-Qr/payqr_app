@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:payqr/controller/home_controllre.dart';
+import 'package:payqr/controller/dashbord/home_controllre.dart';
 import 'package:payqr/data/models/payment_model.dart';
-import '../data/models/user_model.dart';
+import '../../data/models/user_model.dart';
 
 abstract class DashboardController
     extends GetxController {
@@ -71,7 +71,7 @@ class DashboardControllerImp
   @override
   void onInit() {
     getUser();
-    
+        
      super.onInit();
   }
 }

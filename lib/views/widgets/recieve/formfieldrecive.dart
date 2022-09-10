@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:payqr/controller/amount_controller.dart';
+import 'package:payqr/controller/transaction/amount_controller.dart';
 
 class AppFormFeildRecive extends StatelessWidget {
   const AppFormFeildRecive({Key? key})

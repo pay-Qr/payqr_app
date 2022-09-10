@@ -1,14 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-  import 'package:get/get.dart';
- 
-import '../views/screens/dashboard.dart';
- 
+import 'package:get/get.dart';
+import 'package:payqr/controller/auth/phoneverfiy_controller.dart';
+
 abstract class AccountDetailsController
     extends GetxController {
   late TextEditingController emailController;
-  late TextEditingController
-      phoneNumberController;
   late TextEditingController cityController;
   late TextEditingController
       cardholderNameController;
@@ -16,11 +13,15 @@ abstract class AccountDetailsController
   late TextEditingController expiryDateController;
   late TextEditingController cvvController;
   late TextEditingController ccpController;
+  late TextEditingController phone =
+      Get.find<PhoneAuthControllerImp>()
+          .phoneController;
   FirebaseFirestore firestore =
       FirebaseFirestore.instance;
-      late bool inprogress = false;
-      
-        
+   bool inprogress = false;
+  PhoneAuthControllerImp phoneAuthControllerImp =
+      Get.put(PhoneAuthControllerImp());
+
   adduser();
   validator();
 }
@@ -38,8 +39,7 @@ class AccountDetailsControllerImp
     cvvController = TextEditingController();
     ccpController = TextEditingController();
     emailController = TextEditingController();
-    phoneNumberController =
-        TextEditingController();
+
     cityController = TextEditingController();
 
     super.onInit();
@@ -53,7 +53,7 @@ class AccountDetailsControllerImp
     cvvController.dispose();
     ccpController.dispose();
     emailController.dispose();
-    phoneNumberController.dispose();
+
     cityController.dispose();
 
     super.dispose();
@@ -62,15 +62,12 @@ class AccountDetailsControllerImp
   @override
   adduser() {
     try {
-     inprogress = true;
-     update();
       firestore
           .collection('users')
           .doc("PqsbdEq5DbDSJ8iJvnh")
-          
           .set({
         'email': emailController.text,
-        'phoneNumber': phoneNumberController.text,
+        'phoneNumber': phone.text,
         'city': cityController.text,
         'cardholderName':
             cardholderNameController.text,
@@ -79,9 +76,10 @@ class AccountDetailsControllerImp
         'cvv': cvvController.text,
         'ccp': ccpController.text,
       });
+      phoneAuthControllerImp.verifyPhoneNumber();
       inprogress = false;
       update();
-      Get.offAll(() => const Dashboard());
+
     } catch (e) {
       GetSnackBar(
           title: 'error', message: e.toString());
@@ -90,22 +88,30 @@ class AccountDetailsControllerImp
 
   @override
   validator() {
+    inprogress = true;
+    print('validator');
+    print(inprogress);
+    update();
     if (emailController.text.isEmpty ||
-        phoneNumberController.text.isEmpty ||
+        phone.text.isEmpty ||
         cityController.text.isEmpty ||
         cardholderNameController.text.isEmpty ||
         cardNumberController.text.isEmpty ||
         expiryDateController.text.isEmpty ||
         cvvController.text.isEmpty ||
         ccpController.text.isEmpty) {
-     return   Get.snackbar(
-          'Error',
-          'Please fill all the fields',
+      inprogress = false;
+       print('validator2');
+    print(inprogress);
+      update();
+      return Get.snackbar(
+          'Error', 'Please fill all the fields',
           snackPosition: SnackPosition.TOP,
           backgroundColor: Colors.red,
           colorText: Colors.white);
-          
     } else {
+       print('validator3');
+    print(inprogress);
       adduser();
     }
   }

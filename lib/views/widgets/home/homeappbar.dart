@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
- import '../../../controller/home_controllre.dart';
+ import '../../../controller/dashbord/home_controllre.dart';
 import '../../../core/constants/style.dart';
 
 class AppHomeBar extends StatelessWidget {

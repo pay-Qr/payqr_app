@@ -2,14 +2,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:payqr/controller/localauth_controller.dart';
+import 'package:payqr/controller/auth/localauth_controller.dart';
 import 'package:payqr/firebase_options.dart';
 import 'package:payqr/test.dart'; 
 import 'package:payqr/views/screens/auth/login.dart';
 import 'package:payqr/views/screens/dashboard.dart';
+import 'package:payqr/views/screens/onbording.dart';
  
 import 'core/constants/style.dart';
- 
+  
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
    await Firebase.initializeApp(
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-
+home: const Onbording() ,
  
      );
   }

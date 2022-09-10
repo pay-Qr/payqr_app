@@ -4,7 +4,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:payqr/controller/qrcode/qrcodescanner_controller.dart';
 import 'package:payqr/core/constants/style.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
-import 'package:payqr/views/widgets/selecttype.dart';
+import 'package:payqr/views/widgets/transaction/selecttype.dart';
 
 class ConfirmPayment extends StatelessWidget {
   const ConfirmPayment({Key? key})

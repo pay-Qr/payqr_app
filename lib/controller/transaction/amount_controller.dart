@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
  
-import '../views/screens/qrcode/qrcodegen.dart';
+import '../../views/screens/qrcode/qrcodegen.dart';
 
 abstract class AmountController
     extends GetxController {
