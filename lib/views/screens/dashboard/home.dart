@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     HomeControllerIpm homeControllerIpm =
-        HomeControllerIpm();
+        Get.put(HomeControllerIpm());
     DashboardControllerImp
         dashboardControllerImp =
         Get.put(DashboardControllerImp());
@@ -27,13 +27,13 @@ class Home extends StatelessWidget {
 
     return Scaffold(
         backgroundColor: AppColor.background,
-        body: GetBuilder<DashboardControllerImp>(
-          init: dashboardControllerImp,
+        body: GetBuilder<HomeControllerIpm>(
+          init: homeControllerIpm,
           builder: (controller) {
             return Column(
               children: [
                 const AppHomeBar(),
-                controller.isloading
+                dashboardControllerImp.isloading
                     ? const Center(
                         child:
                             CircularProgressIndicator(),

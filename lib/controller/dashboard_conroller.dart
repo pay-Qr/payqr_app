@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:payqr/controller/home_controllre.dart';
 import 'package:payqr/data/models/payment_model.dart';
 import '../data/models/user_model.dart';
 
@@ -13,12 +14,12 @@ abstract class DashboardController
 
   User user = User();
   late bool backside = false;
-  List<HistoryModel> data = [];
-  late int total = 0;
+
+   var getdata = Get.lazyPut(() => HomeControllerIpm());
+
   getUser();
   flipcard();
-  getData();
-}
+ }
 
 class DashboardControllerImp
     extends DashboardController {
@@ -65,40 +66,12 @@ class DashboardControllerImp
     update();
   }
 
-// get user transaction data from firestore
-  @override
-  getData() async {
-    data.clear();
-
-    try {
-      QuerySnapshot history =
-          await FirebaseFirestore.instance
-              .collection("users")
-              .doc("PqsbdEq5DbDSJ8iJvnh")
-              .collection('transaction')
-              .get();
-      for (var doc in history.docs) {
-        data.add(HistoryModel(
-          item: doc['type'],
-          name: doc['receiver']["name"],
-          ccp: doc['receiver']["ccp"],
-          amount: doc['amount'],
-          time: doc['time'],
-        ));
-        total += doc['amount'] as int;
-        update();
-      }
-      ;
-    } catch (e) {
-      Get.snackbar('error', e.toString());
-    }
-  }
 
 // on Init
   @override
   void onInit() {
     getUser();
- getData() ;
-    super.onInit();
+    
+     super.onInit();
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
- import '../../../controller/dashboard_conroller.dart';
+ import '../../../controller/home_controllre.dart';
 import '../../../core/constants/style.dart';
 
 class AppHomeBar extends StatelessWidget {
@@ -10,7 +10,7 @@ class AppHomeBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        DashboardControllerImp dashboardControllerIpm = Get.put(DashboardControllerImp());
+        HomeControllerIpm homeControllerIpm = Get.put(HomeControllerIpm());
 
      return Padding(
       padding: const EdgeInsets.only(
@@ -42,7 +42,7 @@ class AppHomeBar extends StatelessWidget {
           ),
           InkWell(
             onTap: (() {
-              dashboardControllerIpm.getData();
+              homeControllerIpm.getData();
         
             }),
             child: Container(
