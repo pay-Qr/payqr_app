@@ -36,6 +36,7 @@ class ConfirmPayment extends StatelessWidget {
           onPressed: () => Get.back(),
         ),
       ),
+       
       body:
           GetBuilder<QrCodeScannerControllerImp>(
         init: controller,

@@ -89,8 +89,7 @@ class AccountDetailsControllerImp
   @override
   validator() {
     inprogress = true;
-    print('validator');
-    print(inprogress);
+    
     update();
     if (emailController.text.isEmpty ||
         phone.text.isEmpty ||
@@ -101,8 +100,7 @@ class AccountDetailsControllerImp
         cvvController.text.isEmpty ||
         ccpController.text.isEmpty) {
       inprogress = false;
-       print('validator2');
-    print(inprogress);
+        
       update();
       return Get.snackbar(
           'Error', 'Please fill all the fields',
@@ -110,8 +108,8 @@ class AccountDetailsControllerImp
           backgroundColor: Colors.red,
           colorText: Colors.white);
     } else {
-       print('validator3');
-    print(inprogress);
+      
+   
       adduser();
     }
   }
