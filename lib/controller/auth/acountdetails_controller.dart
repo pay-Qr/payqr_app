@@ -1,7 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/controller/auth/phoneverfiy_controller.dart';
+
+import '../../views/screens/dashboard.dart';
 
 abstract class AccountDetailsController
     extends GetxController {
@@ -21,6 +24,8 @@ abstract class AccountDetailsController
    bool inprogress = false;
   PhoneAuthControllerImp phoneAuthControllerImp =
       Get.put(PhoneAuthControllerImp());
+
+   String userId = FirebaseAuth.instance.currentUser!.uid;   
 
   adduser();
   validator();
@@ -64,7 +69,7 @@ class AccountDetailsControllerImp
     try {
       firestore
           .collection('users')
-          .doc("PqsbdEq5DbDSJ8iJvnh")
+          .doc(userId)
           .set({
         'email': emailController.text,
         'phoneNumber': phone.text,
@@ -76,7 +81,7 @@ class AccountDetailsControllerImp
         'cvv': cvvController.text,
         'ccp': ccpController.text,
       });
-      phoneAuthControllerImp.verifyPhoneNumber();
+      Get.off(() => const Dashboard());
       inprogress = false;
       update();
 
@@ -110,7 +115,7 @@ class AccountDetailsControllerImp
     } else {
       
    
-      adduser();
+      phoneAuthControllerImp.verifyPhoneNumber();
     }
   }
 }

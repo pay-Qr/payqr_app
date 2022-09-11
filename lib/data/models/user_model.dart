@@ -1,4 +1,4 @@
-class User {
+class UserInformation {
   final String ? name;
   final String? email;
   final String? phone;
@@ -8,7 +8,7 @@ class User {
   final String ?cvv;
   final String ?ccp;
 
-  User({
+  UserInformation({
     this.name,
    this.city,
    this.cardNumber,

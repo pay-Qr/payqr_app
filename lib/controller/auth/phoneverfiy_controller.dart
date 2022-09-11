@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:payqr/controller/auth/acountdetails_controller.dart';
 import 'package:payqr/views/screens/dashboard.dart';
 
 import '../../views/screens/auth/confirmation_code.dart';
@@ -13,9 +14,11 @@ abstract class PhoneAuthController
       TextEditingController();
   late String verId;
   late bool isloding = false;
+  String userId = FirebaseAuth.instance.currentUser!.uid;
+   var  adduser =  Get.lazyPut(() => AccountDetailsControllerImp().adduser());
   verifyPhoneNumber();
   checkcode(String code);
-  valdiation();  
+  valdiation();
 }
 
 class PhoneAuthControllerImp
@@ -30,6 +33,7 @@ class PhoneAuthControllerImp
   void dispose() {
     phoneController.dispose();
     super.dispose();
+
   }
 
   @override
@@ -49,7 +53,7 @@ class PhoneAuthControllerImp
           backgroundColor: Colors.green,
           colorText: Colors.white,
         );
-        Get.offAll(() => const Dashboard());
+       adduser;
       },
       verificationFailed:
           (FirebaseAuthException e) {
@@ -78,12 +82,12 @@ class PhoneAuthControllerImp
           int? resendToken) {
         isloding = false;
         update();
+        verId = verificationId;
         Get.to(const ConfirmationCode(),
             transition: Transition.rightToLeft,
             duration:
                 const Duration(milliseconds: 5),
             curve: Curves.easeIn);
-        verId = verificationId;
       },
       timeout: const Duration(seconds: 20),
       codeAutoRetrievalTimeout:
@@ -98,10 +102,10 @@ class PhoneAuthControllerImp
   checkcode(code) async {
     isloding = false;
     update();
-    print(auth.currentUser!.uid);
+
     try {
-       isloding = false;
-        update();
+      isloding = false;
+      update();
       PhoneAuthCredential credential =
           PhoneAuthProvider.credential(
               verificationId: verId,
@@ -136,11 +140,9 @@ class PhoneAuthControllerImp
     }
   }
 
-   
-  
   @override
   valdiation() {
-   if (phoneController.text.isEmpty) {
+    if (phoneController.text.isEmpty) {
       Get.snackbar(
         'Error',
         'Please enter phone number',
@@ -158,8 +160,6 @@ class PhoneAuthControllerImp
       );
     } else {
       verifyPhoneNumber();
-    
-     
-   }
+    }
   }
 }

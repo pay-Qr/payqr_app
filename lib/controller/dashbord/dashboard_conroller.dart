@@ -1,9 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:payqr/controller/dashbord/home_controllre.dart';
-import 'package:payqr/data/models/payment_model.dart';
-import '../../data/models/user_model.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+  import 'package:get/get.dart';
+import 'package:payqr/controller/qrcode/qrcodescanner_controller.dart';
+  import '../../data/models/user_model.dart';
 
 abstract class DashboardController
     extends GetxController {
@@ -12,12 +11,10 @@ abstract class DashboardController
       .instance
       .collection('users');
 
-  User user = User();
+  UserInformation user = UserInformation();
   late bool backside = false;
-
-   var getdata = Get.lazyPut(() => HomeControllerIpm());
-
-  getUser();
+  late String userId = FirebaseAuth.instance.currentUser!.uid;
+   getUser();
   flipcard();
  }
 
@@ -30,10 +27,10 @@ class DashboardControllerImp
   getUser() async {
     isloading = true;
     await users
-        .doc("PqsbdEq5DbDSJ8iJvnh")
+        .doc()
         .get()
         .then((value) {
-      user = User(
+      user = UserInformation(
           cardNumber: value['cardNumber'],
           name: value['cardholderName'],
           expiryDate: value['expiryDate'],

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/views/screens/dashboard.dart';
@@ -15,15 +16,13 @@ abstract class QrCodeScannerController
   QRViewController? controller;
   Barcode? barcode;
   Map<String, dynamic>? data;
+   String userId  = FirebaseAuth.instance.currentUser!.uid;
+
 
   onQRViewCreated(QRViewController controller);
   confirmPayment();
   late String type = 'null';
-  CollectionReference users = FirebaseFirestore
-      .instance
-      .collection('users')
-      .doc("PqsbdEq5DbDSJ8iJvnh")
-      .collection('transaction');
+  
   late bool isloading = false;
 }
 
@@ -51,6 +50,11 @@ class QrCodeScannerControllerImp
 
   @override
   confirmPayment() {
+    CollectionReference users = FirebaseFirestore
+      .instance
+      .collection('users')
+      .doc(userId)
+      .collection('transaction');
     isloading = true;
     update();
     if (type == 'null') {

@@ -22,6 +22,7 @@ abstract class HomeController
   goToRecieve();
     getData();
     late bool isloading = Get.find<DashboardControllerImp>().isloading;
+    late String userId = Get.find<DashboardControllerImp>().userId;
 
  
 }
@@ -60,7 +61,7 @@ class HomeControllerIpm extends HomeController {
       QuerySnapshot history =
           await FirebaseFirestore.instance
               .collection("users")
-              .doc("PqsbdEq5DbDSJ8iJvnh")
+              .doc(userId)
               .collection('transaction').orderBy('time',descending: true)
               .get();
       for (var doc in history.docs) {
