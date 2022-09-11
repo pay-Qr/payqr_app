@@ -25,8 +25,7 @@ abstract class AccountDetailsController
   PhoneAuthControllerImp phoneAuthControllerImp =
       Get.put(PhoneAuthControllerImp());
 
-   String userId = FirebaseAuth.instance.currentUser!.uid;   
-
+ 
   adduser();
   validator();
 }
@@ -60,7 +59,7 @@ class AccountDetailsControllerImp
     emailController.dispose();
 
     cityController.dispose();
-
+   
     super.dispose();
   }
 
@@ -69,7 +68,7 @@ class AccountDetailsControllerImp
     try {
       firestore
           .collection('users')
-          .doc(userId)
+          .doc(FirebaseAuth.instance.currentUser!.uid)
           .set({
         'email': emailController.text,
         'phoneNumber': phone.text,

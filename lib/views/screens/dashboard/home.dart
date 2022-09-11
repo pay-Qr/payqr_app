@@ -33,7 +33,7 @@ class Home extends StatelessWidget {
             return Column(
               children: [
                 const AppHomeBar(),
-                dashboardControllerImp.isloading
+                dashboardControllerImp.isloading 
                     ? const Center(
                         child:
                             CircularProgressIndicator(),

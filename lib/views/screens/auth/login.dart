@@ -134,6 +134,8 @@ class Login extends StatelessWidget {
                             label: "Next",
                             onTap: () {
                               phoneAuthControllerImp
+                                  .login = true;
+                              phoneAuthControllerImp
                                   .valdiation();
                             },
                           ),

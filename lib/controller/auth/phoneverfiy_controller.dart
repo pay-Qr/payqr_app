@@ -12,10 +12,10 @@ abstract class PhoneAuthController
 
   late TextEditingController phoneController =
       TextEditingController();
+  late bool login = false;
   late String verId;
   late bool isloding = false;
-  String userId = FirebaseAuth.instance.currentUser!.uid;
-   var  adduser =  Get.lazyPut(() => AccountDetailsControllerImp().adduser());
+
   verifyPhoneNumber();
   checkcode(String code);
   valdiation();
@@ -33,7 +33,6 @@ class PhoneAuthControllerImp
   void dispose() {
     phoneController.dispose();
     super.dispose();
-
   }
 
   @override
@@ -53,7 +52,6 @@ class PhoneAuthControllerImp
           backgroundColor: Colors.green,
           colorText: Colors.white,
         );
-       adduser;
       },
       verificationFailed:
           (FirebaseAuthException e) {
@@ -89,7 +87,7 @@ class PhoneAuthControllerImp
                 const Duration(milliseconds: 5),
             curve: Curves.easeIn);
       },
-      timeout: const Duration(seconds: 20),
+      timeout: const Duration(seconds: 60),
       codeAutoRetrievalTimeout:
           (String verificationId) {
         isloding = false;
@@ -118,8 +116,19 @@ class PhoneAuthControllerImp
         backgroundColor: Colors.green,
         colorText: Colors.white,
       );
-
-      Get.offAll(() => const Dashboard());
+      if ( login ) {
+        
+        Get.off(const Dashboard(),
+            transition: Transition.rightToLeft,
+            duration:
+                const Duration(milliseconds: 5),
+            curve: Curves.easeIn);
+      } else {
+        void adduser = Get.lazyPut(() =>
+            AccountDetailsControllerImp()
+                .adduser());
+        adduser;
+      }
     } catch (e) {
       if (e == 'invalid-verification-code') {
         Get.snackbar(
@@ -137,6 +146,7 @@ class PhoneAuthControllerImp
         backgroundColor: Colors.red,
         colorText: Colors.white,
       );
+      print(e);
     }
   }
 

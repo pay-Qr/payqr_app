@@ -24,10 +24,10 @@ class DashboardControllerImp
   late bool isloading = false;
 // get user personal data from firestore
   @override
-  getUser() async {
+  getUser() async { 
     isloading = true;
     await users
-        .doc()
+        .doc(FirebaseAuth.instance.currentUser!.uid)
         .get()
         .then((value) {
       user = UserInformation(
