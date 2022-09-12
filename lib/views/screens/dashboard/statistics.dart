@@ -16,6 +16,7 @@ class _StatisticsState extends State<Statistics> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+ 
       backgroundColor: AppColor.background,
       appBar: AppBar(
         backgroundColor: AppColor.primary,
@@ -44,6 +45,7 @@ class _StatisticsState extends State<Statistics> {
                         Radius.circular(40),
                   ),
                 ),
+ 
               ),
               const AppStaticCard(),
             ],
