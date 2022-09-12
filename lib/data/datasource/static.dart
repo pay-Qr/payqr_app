@@ -17,7 +17,7 @@ List<IconData> bottomBarItems = const [
 List<OnbordingModel> onBordingList = [
   OnbordingModel(
       title: 'Receive money',
-      description: 'Generate you QR code, let the sender scan it and here you got your money!',
+      description: 'Generate your QR code, let the sender scan it and here you got your money!',
       imageUrl: AppImageUrl.onbordingone),
   OnbordingModel(
       title: 'History',

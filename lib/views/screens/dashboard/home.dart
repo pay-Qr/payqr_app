@@ -46,7 +46,7 @@ class Home extends StatelessWidget {
                         MainAxisAlignment.center,
                     children: [
                       AppHomeBtn(
-                          label: 'Recieve',
+                          label: 'Receive',
                           icon: Ionicons
                               .arrow_down_circle_outline,
                           ontap: () {

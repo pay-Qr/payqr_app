@@ -6,6 +6,7 @@ import 'package:payqr/controller/auth/localauth_controller.dart';
 import 'package:payqr/firebase_options.dart';
  import 'package:payqr/views/screens/dashboard.dart';
 import 'package:payqr/views/screens/onbording.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';  
 
 import 'core/constants/style.dart';
 
@@ -15,6 +16,8 @@ void main() async {
     options:
         DefaultFirebaseOptions.currentPlatform,
   );
+  FirebaseCrashlytics.instance.crash();
+
 
   runApp(const MyApp());
 }
