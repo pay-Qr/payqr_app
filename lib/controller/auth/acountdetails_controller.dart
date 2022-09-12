@@ -93,7 +93,7 @@ class AccountDetailsControllerImp
   validator() {
     inprogress = true;
     phoneAuthControllerImp.login = false;
-    print(phoneAuthControllerImp.login);
+    
 
     update();
     if (emailController.text.isEmpty ||

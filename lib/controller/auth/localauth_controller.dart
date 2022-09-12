@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:local_auth/local_auth.dart';
-import 'package:payqr/views/screens/dashboard.dart';
-
+import 'package:payqr/views/screens/auth/login.dart';
+ 
  abstract class LocaleAuthController
     extends GetxController {
   LocalAuthentication auth =
@@ -34,7 +34,7 @@ class LocaleAuthControllerImp extends LocaleAuthController {
   chekbio() async {
     canscan = await auth.canCheckBiometrics;
     if (!canscan!) {
-       Get.to(const Dashboard());
+       Get.to(const Login());
  
     }
     authenticat();

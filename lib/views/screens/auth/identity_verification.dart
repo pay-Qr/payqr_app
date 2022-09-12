@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:payqr/core/constants/style.dart';
-import 'package:payqr/views/screens/auth/upload_id.dart';
-import 'package:payqr/views/widgets/reusable_identity_verification_button.dart';
+ import 'package:payqr/views/widgets/reusable_identity_verification_button.dart';
 
 class IdentityVerification
     extends StatelessWidget {

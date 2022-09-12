@@ -1,5 +1,4 @@
-import 'dart:io';
-
+ 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -80,7 +79,7 @@ class Profile extends StatelessWidget {
                               },
                               title: const Text(
                                   "Verify your account"),
-                              trailing: Icon(Ionicons
+                              trailing: const Icon(Ionicons
                                   .checkmark_circle_outline),
                             ),
                             Divider(

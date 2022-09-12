@@ -46,29 +46,27 @@ class AppHeadreProfile extends StatelessWidget {
                   crossAxisAlignment:
                       CrossAxisAlignment.start,
                   children: [
-                    Text(
+                   const Text(
                       'Hello',
                       style: TextStyle(
                         color: Colors.white,
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       width: Get.width * 0.52,
                   
-                      child: Flexible(
-                        child: Text(
-                          dashboardControllerImp
-                              .user.name!,
-                          overflow: TextOverflow
-                              .visible,
-                          maxLines: 2,
-                          softWrap: true,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 17,
-                            fontWeight:
-                                FontWeight.bold,
-                          ),
+                      child: Text(
+                        dashboardControllerImp
+                            .user.name!,
+                        overflow: TextOverflow
+                            .visible,
+                        maxLines: 2,
+                        softWrap: true,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight:
+                              FontWeight.bold,
                         ),
                       ),
                     ),

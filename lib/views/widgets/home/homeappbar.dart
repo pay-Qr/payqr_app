@@ -1,7 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:payqr/controller/dashbord/dashboard_conroller.dart';
+import 'package:flutter/material.dart'; 
 import '../../../core/constants/style.dart';
 
 class AppHomeBar extends StatelessWidget {
@@ -11,9 +9,7 @@ class AppHomeBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DashboardControllerImp
-        dashboardControllerImp =
-        Get.put(DashboardControllerImp());
+    
 
     return Padding(
       padding: const EdgeInsets.only(
@@ -45,9 +41,7 @@ class AppHomeBar extends StatelessWidget {
             ],
           ),
           InkWell(
-            onTap: (() {
-             FirebaseAuth.instance.signOut();
-            }),
+          
             child: Container(
               height: 40,
               width: 40,

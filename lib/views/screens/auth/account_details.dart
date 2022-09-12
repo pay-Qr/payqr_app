@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:payqr/controller/auth/acountdetails_controller.dart';
-import 'package:payqr/controller/auth/phoneverfiy_controller.dart';
-import 'package:payqr/core/constants/style.dart';
+ import 'package:payqr/core/constants/style.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
 import 'package:payqr/views/widgets/reusable_textfield.dart';
 
@@ -16,10 +15,7 @@ class AccountDetails extends StatelessWidget {
     AccountDetailsControllerImp
         accountDetailsControllerImp =
         Get.put(AccountDetailsControllerImp());
-    PhoneAuthControllerImp
-        phoneAuthControllerImp =
-        Get.put(PhoneAuthControllerImp());
-
+     
     return Scaffold(
         backgroundColor: AppColor.background,
         appBar: AppBar(
