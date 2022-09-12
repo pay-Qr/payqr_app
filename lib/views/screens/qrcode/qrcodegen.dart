@@ -18,19 +18,19 @@ class QrcodeGen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.background,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColor.primary,
         elevation: 0,
         title: const Text(
           'Scan QR Code',
           style: TextStyle(
-              color: Colors.black, fontSize: 24),
+               fontSize: 24),
         ),
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(
             Ionicons.chevron_back_outline,
             size: 35,
-            color: Colors.black,
+            
           ),
           onPressed: () => Get.back(),
         ),

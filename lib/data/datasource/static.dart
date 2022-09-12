@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:payqr/views/screens/dashboard/history.dart';
 import 'package:payqr/views/screens/dashboard/home.dart';
+import 'package:payqr/views/screens/dashboard/profile.dart';
 import 'package:payqr/views/screens/dashboard/statistics.dart';
 
 import '../../core/constants/imageassets.dart';
@@ -32,7 +33,5 @@ List<Widget> widgetOptions = <Widget>[
   const Home(),
   const History(),
   const Statistics(),
-  const Text(
-    'Index 2: Business',
-  ),
+  const Profile(),
 ];

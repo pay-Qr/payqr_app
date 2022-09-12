@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
 
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'PayQr',
         theme: ThemeData(
           fontFamily: AppFont.primary,
           textTheme: const TextTheme(

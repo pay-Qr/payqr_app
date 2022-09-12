@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:payqr/controller/qrcode/qrcodescanner_controller.dart';
+import 'package:payqr/core/constants/style.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -19,13 +20,13 @@ class QrCodeScanner extends StatelessWidget {
         builder: ((controller) {
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: Colors.transparent,
+              backgroundColor:AppColor.primary,
               elevation: 0,
               leading: IconButton(
                 icon: const Icon(
                   Ionicons.chevron_back_outline,
                   size: 30,
-                  color: Colors.black,
+                 
                 ),
                 onPressed: () {
                   Get.back();
@@ -34,7 +35,7 @@ class QrCodeScanner extends StatelessWidget {
               title: const Text(
                 "Qr Code Scanner",
                 style: TextStyle(
-                  color: Color(0xFF12182D),
+                 
                   fontSize: 23,
                 ),
               ),
