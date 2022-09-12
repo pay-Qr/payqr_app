@@ -61,8 +61,8 @@ class _StatisticsState extends State<Statistics> {
                         ),
                       ),
 
-                      const SizedBox(
-                        width: 40.0,
+                      SizedBox(
+                        width: Get.width * 0.14,
                       ),
 
                       // TITLE
@@ -176,9 +176,9 @@ class _StatisticsState extends State<Statistics> {
                   ),
                   SizedBox(
                     height: Get.height * 0.04,
-                  ),   
+                  ),
                   const ReusableCard(
-                    imagePath: 'assets/images/icon/food.png',
+                    imagePath: 'assets/images/bus.png',
                     activityTitle: "Food",
                     activityAmountLeft: "\$1000 left",
                     activityBudget: "\$3000",
@@ -187,7 +187,7 @@ class _StatisticsState extends State<Statistics> {
                     height: Get.height * 0.04,
                   ),
                   const ReusableCard(
-                    imagePath: 'assets/images/icon/game.png',
+                    imagePath: 'assets/images/bus.png',
                     activityTitle: "Sports",
                     activityAmountLeft: "\$70 left",
                     activityBudget: "\$200",
@@ -196,7 +196,7 @@ class _StatisticsState extends State<Statistics> {
                     height: Get.height * 0.04,
                   ),
                   const ReusableCard(
-                    imagePath: 'assets/images/icon/book.png',
+                    imagePath: 'assets/images/bus.png',
                     activityTitle: "Education",
                     activityAmountLeft: "\$300 left",
                     activityBudget: "\$500",
