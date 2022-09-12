@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     LocaleAuthControllerImp
         localeAuthControllerImp =
-        Get.put(LocaleAuthControllerImp());
+        Get.put(LocaleAuthControllerImp()); 
 
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
@@ -44,27 +44,26 @@ class MyApp extends StatelessWidget {
           ),
           primarySwatch: Colors.blue,
         ),
-        home: const Dashboard());
+        home:  FirebaseAuth.instance.currentUser == null
+          ? const Onbording()
+          :  
+
+ GetBuilder<LocaleAuthControllerImp>(
+        init: localeAuthControllerImp,
+        builder: (controller)   {
+          if (controller.isAuth)  {
+            return const Dashboard();
+          } else  {
+              return  const Scaffold(
+                body: Center(child: CircularProgressIndicator()),
+              );
+
+          
+          }
+        },
+      ),  );
   }
 }
  
  
  
-//  FirebaseAuth.instance.currentUser == null
-//           ? const Onbording()
-//           :  
-
-//  GetBuilder<LocaleAuthControllerImp>(
-//         init: localeAuthControllerImp,
-//         builder: (controller)   {
-//           if (controller.isAuth)  {
-//             return const Dashboard();
-//           } else  {
-//               return  const Scaffold(
-//                 body: Center(child: CircularProgressIndicator()),
-//               );
-
-          
-//           }
-//         },
-//       ),

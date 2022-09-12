@@ -30,43 +30,46 @@ class Home extends StatelessWidget {
         body: GetBuilder<HomeControllerIpm>(
           init: homeControllerIpm,
           builder: (controller) {
-            return Column(
-              children: [
-                const AppHomeBar(),
-                dashboardControllerImp.isloading 
-                    ? const Center(
-                        child:
-                            CircularProgressIndicator(),
-                      )
-                    : const AppBankCard(),
-                Row(
-                  mainAxisAlignment:
-                      MainAxisAlignment.center,
-                  children: [
-                    AppHomeBtn(
-                        label: 'Recieve',
-                        icon: Ionicons
-                            .arrow_down_circle_outline,
-                        ontap: () {
-                          homeControllerIpm
-                              .goToRecieve();
-                        }),
-                    AppHomeBtn(
-                        label: 'Sent',
-                        icon: Ionicons
-                            .arrow_up_circle_outline,
-                        ontap: () {
-                          Get.to(
-                              const QrCodeScanner());
-                        }),
-                    AppHomeBtn(
-                        label: 'Exchange',
-                        icon: Ionicons.repeat,
-                        ontap: () {})
-                  ],
-                ),
-                const AppHistoryHome()
-              ],
+            return Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Column(
+                children: [
+                  const AppHomeBar(),
+                  dashboardControllerImp.isloading 
+                      ? const Center(
+                          child:
+                              CircularProgressIndicator(),
+                        )
+                      : const AppBankCard(),
+                  Row(
+                    mainAxisAlignment:
+                        MainAxisAlignment.center,
+                    children: [
+                      AppHomeBtn(
+                          label: 'Recieve',
+                          icon: Ionicons
+                              .arrow_down_circle_outline,
+                          ontap: () {
+                            homeControllerIpm
+                                .goToRecieve();
+                          }),
+                      AppHomeBtn(
+                          label: 'Sent',
+                          icon: Ionicons
+                              .arrow_up_circle_outline,
+                          ontap: () {
+                            Get.to(
+                                const QrCodeScanner());
+                          }),
+                      AppHomeBtn(
+                          label: 'Exchange',
+                          icon: Ionicons.repeat,
+                          ontap: () {})
+                    ],
+                  ),
+                  const AppHistoryHome()
+                ],
+              ),
             );
           },
         ));

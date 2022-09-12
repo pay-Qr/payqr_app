@@ -12,8 +12,8 @@ class Recieve extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-  AmountControllerImp amountControllerImp = Get.put(AmountControllerImp());
+    AmountControllerImp amountControllerImp =
+        Get.put(AmountControllerImp());
     return Scaffold(
       backgroundColor: AppColor.background,
       appBar: AppBar(
@@ -27,7 +27,7 @@ class Recieve extends StatelessWidget {
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(
-            Ionicons.arrow_back_circle_outline,
+            Ionicons.chevron_back_outline,
             size: 35,
             color: Colors.black,
           ),
@@ -59,7 +59,7 @@ class Recieve extends StatelessWidget {
             ),
             MaterialButton(
               onPressed: () {
-               amountControllerImp.submit();
+                amountControllerImp.submit();
               },
               child: Container(
                 padding:
@@ -92,6 +92,6 @@ class Recieve extends StatelessWidget {
           ],
         ),
       ),
-    ) ;
+    );
   }
 }

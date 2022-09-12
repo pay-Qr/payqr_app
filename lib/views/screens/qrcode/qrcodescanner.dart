@@ -13,7 +13,7 @@ class QrCodeScanner extends StatelessWidget {
   Widget build(BuildContext context) {
     QrCodeScannerControllerImp controller =
         Get.put(QrCodeScannerControllerImp());
-    
+
     return GetBuilder<QrCodeScannerControllerImp>(
         init: controller,
         builder: ((controller) {
@@ -23,8 +23,7 @@ class QrCodeScanner extends StatelessWidget {
               elevation: 0,
               leading: IconButton(
                 icon: const Icon(
-                  Ionicons
-                      .arrow_back_circle_outline,
+                  Ionicons.chevron_back_outline,
                   size: 30,
                   color: Colors.black,
                 ),
@@ -48,10 +47,8 @@ class QrCodeScanner extends StatelessWidget {
                 crossAxisAlignment:
                     CrossAxisAlignment.center,
                 children: <Widget>[
-                   SizedBox(
-                  
-                    height: Get.height *0.15 ,
-                     
+                  SizedBox(
+                    height: Get.height * 0.15,
                   ),
                   Container(
                     width: Get.width * 0.8,

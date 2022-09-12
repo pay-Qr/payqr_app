@@ -24,6 +24,7 @@ class AppHistoryPage extends StatelessWidget {
         builder: ((controller) {
           return Expanded(
               child: Column(children: [
+                
             Padding(
               padding: const EdgeInsets.only(
                   left: 25, right: 12, top: 10),
@@ -32,6 +33,7 @@ class AppHistoryPage extends StatelessWidget {
                     MainAxisAlignment
                         .spaceBetween,
                 children: [
+              
                    Text(
                     'History of $title',
                     style:
@@ -45,6 +47,9 @@ class AppHistoryPage extends StatelessWidget {
                 ],
               ),
             ),
+              const  SizedBox(
+                  height: 10,
+                ),
             Expanded(
                 child: ListView.builder(
                     itemCount: data.length,

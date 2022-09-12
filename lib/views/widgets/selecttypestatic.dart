@@ -1,29 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:payqr/controller/dashbord/statistics_controller.dart';
 
-import '../../../controller/qrcode/qrcodescanner_controller.dart';
 import '../../../core/constants/style.dart';
 import '../../../data/models/payment_model.dart';
 
-class SelectType extends StatelessWidget {
-  const SelectType({Key? key}) : super(key: key);
+class SelectTypeStaic extends StatelessWidget {
+  const SelectTypeStaic({Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    QrCodeScannerControllerImp controller =
-        Get.put(QrCodeScannerControllerImp());
+    StatisticsControllerImp controller =
+        Get.put(StatisticsControllerImp());
     return Column(
       children: [
+        SizedBox(
+          height: Get.height * 0.05,
+        ),
         const Text(
-          "Select Type",
+          "Select Type of Product",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
             color: AppColor.primary,
           ),
         ),
-        SizedBox(
-          height: 10,
+        const SizedBox(
+          height: 20,
         ),
         Row(
           mainAxisAlignment:
@@ -31,7 +35,7 @@ class SelectType extends StatelessWidget {
           children: [
             InkWell(
               onTap: (() {
-                controller.type = "SuperMarket";
+                 controller.type = "SuperMarket";
               }),
               child: CircleAvatar(
                 radius: 30,
@@ -50,7 +54,7 @@ class SelectType extends StatelessWidget {
             ),
             InkWell(
               onTap: (() {
-                controller.type = "food";
+                 controller.type = "food";
               }),
               child: CircleAvatar(
                 radius: 30,
@@ -86,7 +90,7 @@ class SelectType extends StatelessWidget {
             ),
             InkWell(
               onTap: (() {
-                controller.type = "Health";
+                 controller.type = "Health";
               }),
               child: CircleAvatar(
                 radius: 30,
@@ -110,7 +114,7 @@ class SelectType extends StatelessWidget {
           children: [
             InkWell(
               onTap: (() {
-                controller.type = "Electr";
+                  controller.type = "Electr";
               }),
               child: CircleAvatar(
                 radius: 30,
@@ -128,7 +132,7 @@ class SelectType extends StatelessWidget {
             ),
             InkWell(
               onTap: (() {
-                controller.type = "cloths";
+                  controller.type = "cloths";
               }),
               child: CircleAvatar(
                 radius: 30,
@@ -146,7 +150,7 @@ class SelectType extends StatelessWidget {
             ),
             InkWell(
               onTap: (() {
-                controller.type = "Book";
+                   controller.type = "Book";
               }),
               child: CircleAvatar(
                 radius: 30,

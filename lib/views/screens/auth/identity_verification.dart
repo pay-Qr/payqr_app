@@ -26,7 +26,7 @@ class IdentityVerification
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(
-            Ionicons.arrow_back_circle_outline,
+            Ionicons.chevron_back_outline,
             size: 35,
             color: Colors.black,
           ),
@@ -83,13 +83,14 @@ class IdentityVerification
               child: Column(
                 mainAxisAlignment:
                     MainAxisAlignment.end,
-                children:   [
+                children: [
                   Flexible(
                     child: Text(
                       "We guarantee your information security, Your information is only used for identity verification!",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: AppColor.text.withOpacity(.7),
+                        color: AppColor.text
+                            .withOpacity(.7),
                         fontSize: 12,
                       ),
                     ),

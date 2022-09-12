@@ -37,12 +37,12 @@ class AppHistoryHome extends StatelessWidget {
                                 .center,
                         children: const [
                           Icon(Ionicons
-                              .cloud_offline_outline),
+                              .repeat_outline),
                           SizedBox(
                             width: 10,
                           ),
                           Text(
-                              'No History Available')
+                              'There is no Transactions Today')
                         ],
                       )
                     : Row(
@@ -77,7 +77,8 @@ class AppHistoryHome extends StatelessWidget {
                           subtitle: Text(Jiffy(
                             controller
                                 .daydata[index]
-                                .time!.toDate(), 
+                                .time!
+                                .toDate(),
                           ).format('hh:mm a')),
                           trailing: Text(
                               '${controller.daydata[index].amount} DA'),

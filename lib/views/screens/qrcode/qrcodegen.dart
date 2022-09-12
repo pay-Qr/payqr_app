@@ -7,10 +7,9 @@ import 'package:payqr/views/screens/dashboard.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
 
 class QrcodeGen extends StatelessWidget {
-  
-  const QrcodeGen(
-      {Key? key,  })
-      : super(key: key);
+  const QrcodeGen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class QrcodeGen extends StatelessWidget {
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(
-            Ionicons.arrow_back_circle_outline,
+            Ionicons.chevron_back_outline,
             size: 35,
             color: Colors.black,
           ),
@@ -61,9 +60,9 @@ class QrcodeGen extends StatelessWidget {
               child: Center(
                 child: PrettyQr(
                   size: 200,
-                 /*image: const AssetImage(
+                  /*image: const AssetImage(
                       'assets/images/bna.png'),*/
-                  data:  controller.data ,
+                  data: controller.data,
                   errorCorrectLevel:
                       QrErrorCorrectLevel.H,
                   roundEdges: true,
@@ -77,12 +76,13 @@ class QrcodeGen extends StatelessWidget {
           MaterialButton(
             onPressed: () {
               Get.to(
-              const   Dashboard(),
-                transition: Transition.rightToLeft,
-                curve: Curves.fastLinearToSlowEaseIn,
+                const Dashboard(),
+                transition:
+                    Transition.rightToLeft,
+                curve:
+                    Curves.fastLinearToSlowEaseIn,
                 duration: const Duration(
                     milliseconds: 500),
-              
               );
             },
             child: Container(
