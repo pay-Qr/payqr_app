@@ -1,4 +1,5 @@
  
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/views/screens/auth/login.dart';
@@ -44,7 +45,9 @@ class CustomButtonOnbording
                 const EdgeInsets.only(top: 10),
             child: MaterialButton(
               onPressed: () {
-                Get.off(const Login());
+               // Get.off(const Login());
+               FirebaseCrashlytics.instance.crash();
+
               },
               child: const Text(
                 "Skip",
