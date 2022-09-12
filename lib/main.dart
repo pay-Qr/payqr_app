@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/controller/auth/localauth_controller.dart';
 import 'package:payqr/firebase_options.dart';
-import 'package:payqr/views/screens/auth/login.dart';
-import 'package:payqr/views/screens/dashboard.dart';
+ import 'package:payqr/views/screens/dashboard.dart';
 import 'package:payqr/views/screens/onbording.dart';
 
 import 'core/constants/style.dart';

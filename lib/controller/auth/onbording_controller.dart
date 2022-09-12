@@ -22,7 +22,7 @@ class OnBoardingControllerImp
   next() {
     currentPage++;
     if (currentPage > onBordingList.length - 1) {
-      Get.off(Login());
+      Get.off(const Login());
     } else {
       pageController.animateToPage(currentPage,
           duration:

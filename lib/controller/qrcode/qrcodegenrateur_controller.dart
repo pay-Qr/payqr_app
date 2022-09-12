@@ -1,5 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:get/get.dart';
+ import 'package:get/get.dart';
 import 'package:payqr/controller/transaction/amount_controller.dart';
 import 'package:payqr/controller/dashbord/dashboard_conroller.dart';
 

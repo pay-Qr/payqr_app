@@ -145,8 +145,7 @@ class PhoneAuthControllerImp
         snackPosition: SnackPosition.TOP,
         backgroundColor: Colors.red,
         colorText: Colors.white,
-      );
-      print(e);
+      );    
     }
   }
 

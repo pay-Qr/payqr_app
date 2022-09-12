@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
-import 'package:payqr/controller/dashbord/home_controllre.dart';
+ import 'package:payqr/controller/dashbord/home_controllre.dart';
 import 'package:payqr/controller/dashbord/statistics_controller.dart';
 import 'package:payqr/core/constants/style.dart';
 import 'package:payqr/data/models/payment_model.dart';

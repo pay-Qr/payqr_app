@@ -22,7 +22,7 @@ class SelectType extends StatelessWidget {
             color: AppColor.primary,
           ),
         ),
-        SizedBox(
+       const  SizedBox(
           height: 10,
         ),
         Row(

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ionicons/ionicons.dart';
-import 'package:payqr/core/constants/style.dart';
+ import 'package:payqr/core/constants/style.dart';
 import 'package:payqr/views/widgets/statistics/detailscard_statice.dart';
-import 'package:payqr/views/widgets/statistics/reusable_card.dart';
-import 'package:payqr/views/widgets/statistics/totalcard_statice.dart';
+ import 'package:payqr/views/widgets/statistics/totalcard_statice.dart';
 
 class Statistics extends StatefulWidget {
   const Statistics({super.key});
@@ -53,7 +51,7 @@ class _StatisticsState extends State<Statistics> {
           SizedBox(
             height: Get.height * 0.09,
           ),
-          AppDeatailesStaticeCard(),
+        const  AppDeatailesStaticeCard(),
         ],
       ),
     );

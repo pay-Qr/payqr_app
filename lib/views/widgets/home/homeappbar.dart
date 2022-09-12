@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/controller/dashbord/dashboard_conroller.dart';
- import '../../../controller/dashbord/home_controllre.dart';
-import '../../../core/constants/style.dart';
+ import '../../../core/constants/style.dart';
 
 class AppHomeBar extends StatelessWidget {
   final void Function()? ontap;
@@ -11,8 +10,7 @@ class AppHomeBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        HomeControllerIpm homeControllerIpm = Get.put(HomeControllerIpm());
-        DashboardControllerImp dashboardControllerImp = Get.put(DashboardControllerImp());
+         DashboardControllerImp dashboardControllerImp = Get.put(DashboardControllerImp());
 
      return Padding(
       padding: const EdgeInsets.only(

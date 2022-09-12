@@ -33,7 +33,7 @@ class AppAmountCircule extends StatelessWidget {
               controller.changed();
             },
             child: Text(
-              controller.val == "0"
+              controller.val == 0
                   ? "0 DA"
                   : "${controller.val} DA",
               style: const TextStyle(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ionicons/ionicons.dart';
-import 'package:payqr/controller/dashbord/home_controllre.dart';
+ import 'package:payqr/controller/dashbord/home_controllre.dart';
 import 'package:payqr/views/screens/addstatistce.dart';
 
 import '../../../core/constants/style.dart';
