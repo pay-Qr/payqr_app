@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/controller/dashbord/dashboard_conroller.dart';
@@ -45,7 +46,7 @@ class AppHomeBar extends StatelessWidget {
           ),
           InkWell(
             onTap: (() {
-              dashboardControllerImp.getUser();
+             FirebaseAuth.instance.signOut();
             }),
             child: Container(
               height: 40,

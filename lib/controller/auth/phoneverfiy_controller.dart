@@ -12,7 +12,7 @@ abstract class PhoneAuthController
 
   late TextEditingController phoneController =
       TextEditingController();
-  late bool login = false;
+  late bool login  ;
   late String verId;
   late bool isloding = false;
 
@@ -87,7 +87,7 @@ class PhoneAuthControllerImp
                 const Duration(milliseconds: 5),
             curve: Curves.easeIn);
       },
-      timeout: const Duration(seconds: 60),
+      timeout: const Duration(seconds: 120),
       codeAutoRetrievalTimeout:
           (String verificationId) {
         isloding = false;
@@ -123,11 +123,12 @@ class PhoneAuthControllerImp
             duration:
                 const Duration(milliseconds: 5),
             curve: Curves.easeIn);
-      } else {
-        void adduser = Get.lazyPut(() =>
+      } else if ( !login ) {
+       
+       AccountDetailsControllerImp   accountDetailsControllerImp = Get.put( 
             AccountDetailsControllerImp()
-                .adduser());
-        adduser;
+                );
+     accountDetailsControllerImp.adduser();
       }
     } catch (e) {
       if (e == 'invalid-verification-code') {

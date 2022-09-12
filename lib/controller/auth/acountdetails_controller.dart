@@ -21,11 +21,10 @@ abstract class AccountDetailsController
           .phoneController;
   FirebaseFirestore firestore =
       FirebaseFirestore.instance;
-   bool inprogress = false;
+  bool inprogress = false;
   PhoneAuthControllerImp phoneAuthControllerImp =
       Get.put(PhoneAuthControllerImp());
 
- 
   adduser();
   validator();
 }
@@ -59,7 +58,7 @@ class AccountDetailsControllerImp
     emailController.dispose();
 
     cityController.dispose();
-   
+
     super.dispose();
   }
 
@@ -68,7 +67,8 @@ class AccountDetailsControllerImp
     try {
       firestore
           .collection('users')
-          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .doc(FirebaseAuth
+              .instance.currentUser!.uid)
           .set({
         'email': emailController.text,
         'phoneNumber': phone.text,
@@ -83,7 +83,6 @@ class AccountDetailsControllerImp
       Get.off(() => const Dashboard());
       inprogress = false;
       update();
-
     } catch (e) {
       GetSnackBar(
           title: 'error', message: e.toString());
@@ -93,7 +92,9 @@ class AccountDetailsControllerImp
   @override
   validator() {
     inprogress = true;
-    
+    phoneAuthControllerImp.login = false;
+    print(phoneAuthControllerImp.login);
+
     update();
     if (emailController.text.isEmpty ||
         phone.text.isEmpty ||
@@ -104,7 +105,7 @@ class AccountDetailsControllerImp
         cvvController.text.isEmpty ||
         ccpController.text.isEmpty) {
       inprogress = false;
-        
+
       update();
       return Get.snackbar(
           'Error', 'Please fill all the fields',
@@ -112,8 +113,6 @@ class AccountDetailsControllerImp
           backgroundColor: Colors.red,
           colorText: Colors.white);
     } else {
-      
-   
       phoneAuthControllerImp.verifyPhoneNumber();
     }
   }

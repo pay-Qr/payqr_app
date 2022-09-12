@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:payqr/core/constants/style.dart';
+import 'package:payqr/views/screens/auth/upload_id.dart';
 import 'package:payqr/views/widgets/reusable_identity_verification_button.dart';
 
 class IdentityVerification
@@ -63,7 +64,10 @@ class IdentityVerification
                   "Scan passport to \n verify your identity",
               iconImagePath:
                   "assets/images/icon/passport.png",
-              onTap: () {},
+              onTap: () {
+
+                
+              },
             ),
 
             const SizedBox(height: 40),

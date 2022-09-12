@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:payqr/core/constants/style.dart';
+import 'package:payqr/views/screens/auth/identity_verification.dart';
 import 'package:payqr/views/screens/auth/login.dart';
 import 'package:payqr/views/widgets/profile/groupbtn_profile.dart';
 import 'package:payqr/views/widgets/profile/headre_profile.dart';
@@ -19,9 +20,9 @@ class Profile extends StatelessWidget {
         body: Column(
           children: [
             const AppHeadreProfile(),
-            SingleChildScrollView(
-              child: Expanded(
-                  flex: 3,
+            Expanded(
+                flex: 5,
+                child: SingleChildScrollView(
                   child: Container(
                       decoration: const BoxDecoration(
                           color: AppColor
@@ -72,9 +73,24 @@ class Profile extends StatelessWidget {
                                   .blueGrey[100],
                               thickness: .5,
                             ),
+                            ListTile(
+                              onTap: () {
+                                Get.to(
+                                    const IdentityVerification());
+                              },
+                              title: const Text(
+                                  "Verify your account"),
+                              trailing: Icon(Ionicons
+                                  .checkmark_circle_outline),
+                            ),
+                            Divider(
+                              color: Colors
+                                  .blueGrey[100],
+                              thickness: .5,
+                            ),
                             const ListTile(
-                              title: Text(
-                                  "Support"),
+                              title:
+                                  Text("Support"),
                               trailing: Icon(Ionicons
                                   .help_circle_outline),
                             ),
@@ -105,8 +121,8 @@ class Profile extends StatelessWidget {
                             )
                           ],
                         ),
-                      ))),
-            )
+                      )),
+                ))
           ],
         ));
   }
