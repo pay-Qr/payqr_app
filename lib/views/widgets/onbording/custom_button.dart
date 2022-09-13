@@ -45,8 +45,8 @@ class CustomButtonOnbording
                 const EdgeInsets.only(top: 10),
             child: MaterialButton(
               onPressed: () {
-               // Get.off(const Login());
-               FirebaseCrashlytics.instance.crash();
+                Get.off(const Login());
+               
 
               },
               child: const Text(
