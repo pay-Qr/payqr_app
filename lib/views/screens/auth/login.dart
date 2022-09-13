@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:payqr/controller/auth/phoneverfiy_controller.dart';
 import 'package:payqr/core/constants/style.dart';
- import 'package:payqr/views/screens/auth/personal_details.dart';
+import 'package:payqr/views/screens/auth/personal_details.dart';
 import 'package:payqr/views/widgets/reusable_button.dart';
 import 'package:payqr/views/widgets/reusable_textfield.dart';
 
@@ -31,11 +31,12 @@ class Login extends StatelessWidget {
         body: GetBuilder<PhoneAuthControllerImp>(
           init: phoneAuthControllerImp,
           builder: (controller) {
-            
             return controller.isloding == true
-                ?const Center(child:  CircularProgressIndicator(
-                  color: AppColor.primary,
-                ))
+                ? const Center(
+                    child:
+                        CircularProgressIndicator(
+                    color: AppColor.primary,
+                  ))
                 : Padding(
                     padding: const EdgeInsets.all(
                         30.0),

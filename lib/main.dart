@@ -19,8 +19,8 @@ void main() async {
   );
   FlutterError.onError = FirebaseCrashlytics
       .instance.recordFlutterFatalError;
-      FirebasePerformance performance = FirebasePerformance.instance;
-       
+  FirebasePerformance performance =
+      FirebasePerformance.instance;
 
   runApp(const MyApp());
 }
@@ -53,8 +53,10 @@ class MyApp extends StatelessWidget {
           ? const Onbording()
           : GetBuilder<LocaleAuthControllerImp>(
               init: localeAuthControllerImp,
-              builder: (controller) {
-                if (controller.isAuth) {
+              builder: (controller)   {
+                  
+                if (controller.isAuth ||
+                    controller.canscan == false) {
                   return const Dashboard();
                 } else {
                   return const Scaffold(
